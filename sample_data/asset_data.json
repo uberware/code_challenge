@@ -1,0 +1,182 @@
+[
+  {
+    "asset": {
+      "name": "hero",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword_legendary",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tavern_interior",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "magic_staff",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "deprecated"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "deprecated"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 3,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 4,
+    "status": "active"
+  }
+]

@@ -1,0 +1,9002 @@
+[
+  {
+    "asset": {
+      "name": "hero_man",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "earth",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "artifact",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "earth",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "creature",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "earth",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "oracle",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "vehicle",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "artifact",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "oracle",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "magic",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "creature",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "creature",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dwarf",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "oracle",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "magic",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dwarf",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "artifact",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "magic",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dwarf",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "oracle",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "earth",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "magic",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "artifact",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "vehicle",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "artifact",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dwarf",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "creature",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "vehicle",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "oracle",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "artifact",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "artifact",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "earth",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "vehicle",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "vehicle",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "creature",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 3,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "earth",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "vehicle",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dwarf",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dwarf",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "magic",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "oracle",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "artifact",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "earth",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "vehicle",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "magic",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dwarf",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "artifact",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 3,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "creature",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "earth",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "magic",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wizard",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "pirate",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "chimera",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "basilisk",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "goblin",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wyvern",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "marketplace",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 3,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "water",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 3,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dwarf",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tavern",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "villain",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "horse",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dark",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "arrow",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "magic",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "fx"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "potion",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "creature",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bridge",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "shadow",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "prop"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ship",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "phoenix",
+      "type": "dressing"
+    },
+    "department": "modeling",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "old_hero",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "knight",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "vehicle"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "dungeon_final",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "shield",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "oracle",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cosmic",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "mage",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "vehicle"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "griffin",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hero",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "staff",
+      "type": "prop"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "dressing"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "scroll",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "demon",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "character"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "wind",
+      "type": "fx"
+    },
+    "department": "modeling",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "earth",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "character"
+    },
+    "department": "texturing",
+    "version": 3,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "mountain",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ice",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crown",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "portal",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "light",
+      "type": "fx"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "castle_exterior",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "prop"
+    },
+    "department": "cfx",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "prop"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ring",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 3,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "character"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "prop"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "throne_room",
+      "type": "dressing"
+    },
+    "department": "fx",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "environment"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "character"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sphinx",
+      "type": "dressing"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "environment"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "sword",
+      "type": "dressing"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "set"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "tower",
+      "type": "fx"
+    },
+    "department": "texturing",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "hydra",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "angel",
+      "type": "environment"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "fire",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "vehicle"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "crystal",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cart",
+      "type": "set"
+    },
+    "department": "cfx",
+    "version": 3,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dragon",
+      "type": "prop"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "set"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "fx"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "dungeon",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "river",
+      "type": "vehicle"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "set"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "cave",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "elf",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "treasure_chest",
+      "type": "environment"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "amulet",
+      "type": "set"
+    },
+    "department": "modeling",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "armor",
+      "type": "environment"
+    },
+    "department": "modeling",
+    "version": 2,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "magic",
+      "type": "fx"
+    },
+    "department": "rigging",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ruins",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 2,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "main_street",
+      "type": "character"
+    },
+    "department": "fx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "bow",
+      "type": "set"
+    },
+    "department": "texturing",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "environment"
+    },
+    "department": "rigging",
+    "version": 4,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "sidekick",
+      "type": "dressing"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "ancient",
+      "type": "vehicle"
+    },
+    "department": "cfx",
+    "version": 1,
+    "status": "active"
+  },
+  {
+    "asset": {
+      "name": "forest",
+      "type": "vehicle"
+    },
+    "department": "rigging",
+    "version": 1,
+    "status": "inactive"
+  },
+  {
+    "asset": {
+      "name": "temple",
+      "type": "character"
+    },
+    "department": "animation",
+    "version": 1,
+    "status": "inactive"
+  }
+]
