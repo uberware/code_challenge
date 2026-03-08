@@ -5,47 +5,65 @@ from pathlib import Path
 from fastapi import APIRouter, FastAPI, HTTPException
 from pydantic import BaseModel
 
-from asset_service import api
+from asset_service import api, db
 
 
-class FileRequest(BaseModel):
+class FileReq(BaseModel):
     """Request model for file upload."""
 
     filename: Path
 
 
-class AssetRequest(BaseModel):
+class AssetReq(BaseModel):
     """Request model for asset upload."""
 
     name: str
     asset_type: str
 
 
+class VersionReq(AssetReq):
+    """Request model for asset version upload."""
+
+    department: str
+    version: int
+    status: str
+
+
 router = APIRouter()
 
 
 @router.post("/load", description="Load assets from a JSON file")
-async def load(payload: FileRequest):
+async def load(req: FileReq):
     """Load from a json file."""
-    if not payload.filename.is_file():
+    if not req.filename.is_file():
+        raise HTTPException(status_code=404, detail=f"File not found: {req.filename}")
+    if not api.load_from_json(req.filename):
         raise HTTPException(
-            status_code=404, detail=f"File not found: {payload.filename}"
+            status_code=422, detail=f"File failed validation: {req.filename}"
         )
-    if not api.load_from_json(payload.filename):
-        raise HTTPException(
-            status_code=422, detail=f"File failed validation: {payload.filename}"
-        )
-    return {"status": "success", "message": f"Loaded assets from: {payload.filename}"}
+    return {"status": "success", "message": f"Loaded assets from: {req.filename}"}
 
 
-@router.post("/add_asset", description="Upload assets to a file")
-async def add_asset(payload: AssetRequest):
+@router.post("/add", description="Add a single asset")
+async def add_asset(req: AssetReq):
     """Add an asset."""
-    if not api.add_asset(payload.name, payload.asset_type):
-        raise HTTPException(
-            status_code=422, detail=f"Asset failed validation: {payload}"
-        )
-    return {"status": "success", "message": f"Added asset: {payload}"}
+    if not api.add_asset(req.name, req.asset_type):
+        raise HTTPException(status_code=422, detail=f"Asset failed validation: {req}")
+    return {"status": "success", "message": f"Added asset: {req}"}
+
+
+@router.post("/versions/add", description="Add a single version")
+async def add_version(req: VersionReq):
+    """Add a version."""
+    reg = db.AssetRegistry()
+    asset = api.add_asset(req.name, req.asset_type, registry=reg)
+    if not asset:
+        raise HTTPException(status_code=422, detail=f"Asset failed validation: {req}")
+    if not api.add_version(
+        asset, req.department, req.version, req.status, registry=reg
+    ):
+        raise HTTPException(status_code=422, detail=f"Version failed validation: {req}")
+    return {"status": "success", "message": f"Added version: {req}"}
 
 
 app = FastAPI()

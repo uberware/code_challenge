@@ -6,8 +6,7 @@ from typing import Union
 
 from pydantic import ValidationError
 
-from asset_service import db, logger
-from asset_service.validation import find_good_versions
+from asset_service import db, logger, validation
 
 
 def load_from_json(
@@ -42,13 +41,13 @@ def load_from_json(
         logger.error(f"file {filename} did not contain a list. Got: {type(data)}")
         return False
 
-    good_versions = find_good_versions(data)
+    good_versions = validation.find_good_versions(data)
 
     # Store the valid asset versions into the database
     # TODO: Optimize bulk database operation
     registry = registry or db.AssetRegistry()
     for asset in good_versions:
-        add_asset(asset.name, asset.asset_type, registry=registry)
+        registry.asset(asset.name, asset.asset_type)
         for version in good_versions[asset]:
             registry.version(
                 asset, version.key.department, version.key.version, version.state.status
@@ -78,8 +77,50 @@ def add_asset(
     try:
         if not isinstance(asset_type, db.AssetType):
             asset_type = db.AssetType(asset_type)
-    except (ValueError, TypeError, ValidationError):
-        logger.error(f"Invalid asset data: {asset_name} {asset_type}")
+    except (ValueError, TypeError, ValidationError) as e:
+        logger.error(f"Invalid asset data: {asset_name} {asset_type}\n{e}")
         return None
     registry = registry or db.AssetRegistry()
     return registry.asset(asset_name, asset_type)
+
+
+def add_version(
+    asset: db.Asset,
+    department: str,
+    version: int,
+    status: str | db.AssetVersionStatus | None = None,
+    *,
+    registry: db.AssetRegistry | None = None,
+) -> db.AssetVersionState | None:
+    """Add an asset version to the registry.
+
+    Does not add the Asset itself to the registry.
+
+    Args:
+        asset: The asset to add the version to.
+        department: The department of the asset.
+        version: The version of the asset.
+        status: The status of the asset.
+        registry: The asset registry to use. None creates one on demand.
+
+    Returns:
+        The asset version status or None on failure
+    """
+    # Validate the arguments
+    try:
+        if status is None:
+            status = db.AssetVersionStatus.ACTIVE
+        asset_version = db.AssetVersion(
+            db.AssetVersionKey(asset, department, version),
+            db.AssetVersionState(db.AssetVersionStatus(status)),
+        )
+    except (ValueError, TypeError, ValidationError) as e:
+        logger.error(f"Invalid AssetVersion: {version} {department} {status}\n{e}")
+        return None
+    registry = registry or db.AssetRegistry()
+    return registry.version(
+        asset,
+        asset_version.key.department,
+        asset_version.key.version,
+        asset_version.state.status,
+    )

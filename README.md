@@ -10,6 +10,8 @@ When building production systems, I follow these general steps:
 
 This code is deeply in step 1. It accomplishes the goals set out in the challenge with production quality code and tests, but may not be very well suited to actual production. Once it was fully fleshed out with the basic features and ready to start production testing, step 2 work would be polishing the architecture and usage patterns as needed. Once that was complete, step 3 would be to look for bottlenecks and performance improvements.
 
+For more information see the [Architectural Design Record](ADR.md).
+
 ## Original Request
 
 **Welcome!**

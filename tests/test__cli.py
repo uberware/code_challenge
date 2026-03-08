@@ -67,3 +67,42 @@ def test__add_asset__invalid():
     assert result.exit_code == 1
     assert "Adding asset: name/bad type" in result.output
     assert "Failed to add asset: name/bad type" in result.output
+
+
+def test__add_version__valid():
+    """Test add version with valid data."""
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli, ["versions", "add", "name", "set", "dep", "1", "active"]
+    )
+    assert result.exit_code == 0
+    assert "Adding asset: name/set" in result.output
+    assert "Failed to add asset: name/set" not in result.output
+    assert "Adding version: dep/1 - active" in result.output
+    assert "Failed to add version: dep/1 active" not in result.output
+
+
+def test__add_version__invalid_asset():
+    """Test add version with invalid asset data."""
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli, ["versions", "add", "name", "bad type", "dep", "1", "active"]
+    )
+    assert result.exit_code == 1
+    assert "Adding asset: name/bad type" in result.output
+    assert "Failed to add asset: name/bad type" in result.output
+    assert "Adding version: dep/1 - active" not in result.output
+    assert "Failed to add version: dep/1 active" not in result.output
+
+
+def test__add_version__invalid_version():
+    """Test add version with invalid version data."""
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli, ["versions", "add", "name", "set", "dep", "1", "bad"]
+    )
+    assert result.exit_code == 1
+    assert "Adding asset: name/set" in result.output
+    assert "Failed to add asset: name/set" not in result.output
+    assert "Adding version: dep/1 - bad" in result.output
+    assert "Failed to add version: dep/1 - bad" in result.output

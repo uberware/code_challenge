@@ -12,14 +12,17 @@ import click
 @click.pass_context
 def cli(ctx):
     """Asset Validation & Registration Service CLI"""
+    # this is here as a quick hack to get the CLI to work in a shell
+    # and from the tests on my machine. How this works in production
+    # will depend on the actual deployment mechanism
     ctx.ensure_object(dict)
     working_folder = Path(__file__).resolve().parent.parent
     print(working_folder)
     if working_folder not in sys.path:
         sys.path.append(str(working_folder))
-    from asset_service import api
+    from asset_service import api, db
 
-    ctx.obj.update({"service": api})
+    ctx.obj.update({"service": api, "db": db})
 
 
 @cli.command()
@@ -42,7 +45,7 @@ def add(ctx, asset_name, asset_type):
     """Add an asset from a JSON file."""
     _service = ctx.obj["service"]
     click.echo(f"Adding asset: {asset_name}/{asset_type}")
-    if not _service.add_asset(asset_name, asset_type):
+    if _service.add_asset(asset_name, asset_type) is None:
         sys.exit(f"Failed to add asset: {asset_name}/{asset_type}")
 
 
@@ -92,6 +95,18 @@ def versions():
 def versions_add(ctx, asset_name, asset_type, department, version_num, status):
     """Add an asset version from a JSON file."""
     _service = ctx.obj["service"]
+    _db = ctx.obj["db"]
+    click.echo(f"Adding asset: {asset_name}/{asset_type}")
+    registry = _db.AssetRegistry()
+    asset = _service.add_asset(asset_name, asset_type, registry=registry)
+    if not asset:
+        sys.exit(f"Failed to add asset: {asset_name}/{asset_type}")
+    click.echo(f"Adding version: {department}/{version_num} - {status}")
+    if (
+        _service.add_version(asset, department, version_num, status, registry=registry)
+        is None
+    ):
+        sys.exit(f"Failed to add version: {department}/{version_num} - {status}")
 
 
 @versions.command("get")

@@ -91,3 +91,22 @@ def test__add_asset__invalid(mock_asset_registry):
     """Test add_asset with invalid data."""
     assert api.add_asset("name", "bad type") is None
     mock_asset_registry.asset.assert_not_called()
+
+
+@pytest.mark.parametrize("status_type", ["active", db.AssetVersionStatus.ACTIVE, None])
+def test__add_version__valid(status_type, mock_asset_registry):
+    """Test add_version with valid data."""
+    asset = db.Asset("hero", db.AssetType.CHARACTER)
+    assert api.add_version(asset, "department", 1, status_type) is not None
+    mock_asset_registry.version.assert_has_calls(
+        [
+            call(asset, "department", 1, db.AssetVersionStatus.ACTIVE),
+        ]
+    )
+
+
+def test__add_version__invalid(mock_asset_registry):
+    """Test add_version with invalid data."""
+    asset = db.Asset("hero", db.AssetType.CHARACTER)
+    assert api.add_version(asset, "department", 1, "bad") is None
+    mock_asset_registry.version.assert_not_called()

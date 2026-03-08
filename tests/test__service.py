@@ -59,9 +59,7 @@ def test__load__bad_file(bad_json_file):
 
 def test__add_asset__valid():
     """Test the add asset command with valid payload."""
-    response = client.post(
-        "/v1/add_asset", json={"name": "banana", "asset_type": "prop"}
-    )
+    response = client.post("/v1/add", json={"name": "banana", "asset_type": "prop"})
     assert response.status_code == 200
     assert response.json() == {
         "status": "success",
@@ -71,10 +69,63 @@ def test__add_asset__valid():
 
 def test__add_asset__invalid():
     """Test the add asset command with invalid payload."""
-    response = client.post(
-        "/v1/add_asset", json={"name": "banana", "asset_type": "bad"}
-    )
+    response = client.post("/v1/add", json={"name": "banana", "asset_type": "bad"})
     assert response.status_code == 422
     assert response.json() == {
         "detail": "Asset failed validation: name='banana' asset_type='bad'",
+    }
+
+
+def test__add_version__valid():
+    """Test the add version command with valid payload."""
+    response = client.post(
+        "/v1/versions/add",
+        json={
+            "name": "banana",
+            "asset_type": "prop",
+            "department": "department",
+            "version": 1,
+            "status": "active",
+        },
+    )
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "success",
+        "message": "Added version: name='banana' asset_type='prop' department='department' version=1 status='active'",
+    }
+
+
+def test__add_version__bad_asset():
+    """Test the add version command with a bad asset."""
+    response = client.post(
+        "/v1/versions/add",
+        json={
+            "name": "banana",
+            "asset_type": "bad type",
+            "department": "department",
+            "version": 1,
+            "status": "active",
+        },
+    )
+    assert response.status_code == 422
+    assert response.json() == {
+        "detail": "Asset failed validation: name='banana' asset_type='bad type' department='department' version=1 status='active'"
+    }
+
+
+def test__add_version__bad_version():
+    """Test the add version command with a bad version."""
+    response = client.post(
+        "/v1/versions/add",
+        json={
+            "name": "banana",
+            "asset_type": "prop",
+            "department": "department",
+            "version": 1,
+            "status": "bad",
+        },
+    )
+    assert response.status_code == 422
+    assert response.json() == {
+        "detail": "Version failed validation: name='banana' asset_type='prop' department='department' version=1 status='bad'"
     }
