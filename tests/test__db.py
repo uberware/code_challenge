@@ -1,15 +1,6 @@
 """Test the db module."""
 
-import sqlite3
-
-import pytest
-
 from asset_service import db
-
-
-@pytest.fixture
-def memory_db():
-    return sqlite3.connect(":memory:")
 
 
 def test__asset_registry_init(memory_db):

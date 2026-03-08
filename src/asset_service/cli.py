@@ -9,8 +9,9 @@ import click
 
 
 @click.group()
+@click.option("--registry", required=False, help="Path to registry database")
 @click.pass_context
-def cli(ctx):
+def cli(ctx, registry):
     """Asset Validation & Registration Service CLI"""
     # this is here as a quick hack to get the CLI to work in a shell
     # and from the tests on my machine. How this works in production
@@ -22,7 +23,7 @@ def cli(ctx):
         sys.path.append(str(working_folder))
     from asset_service import api, db
 
-    ctx.obj.update({"service": api, "db": db})
+    ctx.obj.update({"service": api, "registry": db.AssetRegistry(registry)})
 
 
 @cli.command()
@@ -33,7 +34,7 @@ def load(ctx, file_path):
     _service = ctx.obj["service"]
     file_path = Path(file_path).resolve()
     click.echo(f"Loading assets from: {file_path}")
-    if not _service.load_from_json(file_path):
+    if not _service.load_from_json(file_path, registry=ctx.obj["registry"]):
         sys.exit(f"Failed to load assets from: {file_path}")
 
 
@@ -45,7 +46,7 @@ def add(ctx, asset_name, asset_type):
     """Add an asset from a JSON file."""
     _service = ctx.obj["service"]
     click.echo(f"Adding asset: {asset_name}/{asset_type}")
-    if _service.add_asset(asset_name, asset_type) is None:
+    if _service.add_asset(asset_name, asset_type, registry=ctx.obj["registry"]) is None:
         sys.exit(f"Failed to add asset: {asset_name}/{asset_type}")
 
 
@@ -95,15 +96,13 @@ def versions():
 def versions_add(ctx, asset_name, asset_type, department, version_num, status):
     """Add an asset version from a JSON file."""
     _service = ctx.obj["service"]
-    _db = ctx.obj["db"]
     click.echo(f"Adding asset: {asset_name}/{asset_type}")
-    registry = _db.AssetRegistry()
-    asset = _service.add_asset(asset_name, asset_type, registry=registry)
+    asset = _service.add_asset(asset_name, asset_type, registry=ctx.obj["registry"])
     if not asset:
         sys.exit(f"Failed to add asset: {asset_name}/{asset_type}")
     click.echo(f"Adding version: {department}/{version_num} - {status}")
     if (
-        _service.add_version(asset, department, version_num, status, registry=registry)
+        _service.add_version(asset, department, version_num, status, registry=ctx.obj["registry"])
         is None
     ):
         sys.exit(f"Failed to add version: {department}/{version_num} - {status}")

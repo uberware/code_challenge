@@ -73,11 +73,12 @@ def test__load_from_json__string_or_path(valid_json_file, cast, mock_asset_regis
     assert mock_asset_registry.version.call_count == 3
 
 
-def test__load_from_json__empty_file(tmp_path):
+def test__load_from_json__empty_file(tmp_path, tmp_db):
     """Test load_from_json with an empty list file."""
     filename = tmp_path / "empty.json"
     filename.write_text("[]")
-    assert api.load_from_json(filename) is False
+    registry = db.AssetRegistry(tmp_db)
+    assert api.load_from_json(filename, registry=registry) is False
 
 
 @pytest.mark.parametrize("input_type", ["fx", db.AssetType.FX])

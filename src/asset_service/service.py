@@ -8,13 +8,19 @@ from pydantic import BaseModel
 from asset_service import api, db
 
 
-class FileReq(BaseModel):
+class BaseReq(BaseModel):
+    """Base model for all posts."""
+
+    registry: str | None = None
+
+
+class FileReq(BaseReq):
     """Request model for file upload."""
 
     filename: Path
 
 
-class AssetReq(BaseModel):
+class AssetReq(BaseReq):
     """Request model for asset upload."""
 
     name: str
@@ -37,7 +43,7 @@ async def load(req: FileReq):
     """Load from a json file."""
     if not req.filename.is_file():
         raise HTTPException(status_code=404, detail=f"File not found: {req.filename}")
-    if not api.load_from_json(req.filename):
+    if not api.load_from_json(req.filename, registry=db.AssetRegistry(req.registry)):
         raise HTTPException(
             status_code=422, detail=f"File failed validation: {req.filename}"
         )
@@ -47,7 +53,7 @@ async def load(req: FileReq):
 @router.post("/add", description="Add a single asset")
 async def add_asset(req: AssetReq):
     """Add an asset."""
-    if not api.add_asset(req.name, req.asset_type):
+    if not api.add_asset(req.name, req.asset_type, registry=db.AssetRegistry(req.registry)):
         raise HTTPException(status_code=422, detail=f"Asset failed validation: {req}")
     return {"status": "success", "message": f"Added asset: {req}"}
 
@@ -55,7 +61,7 @@ async def add_asset(req: AssetReq):
 @router.post("/versions/add", description="Add a single version")
 async def add_version(req: VersionReq):
     """Add a version."""
-    reg = db.AssetRegistry()
+    reg = db.AssetRegistry(req.registry)
     asset = api.add_asset(req.name, req.asset_type, registry=reg)
     if not asset:
         raise HTTPException(status_code=422, detail=f"Asset failed validation: {req}")
