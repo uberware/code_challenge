@@ -57,7 +57,12 @@ class AssetVersionState:
 
 
 class AssetRegistry:
-    def __init__(self, database_path: Path | str | None = None, *, connection: sqlite3.Connection | None = None):
+    def __init__(
+        self,
+        database_path: Path | str | None = None,
+        *,
+        connection: sqlite3.Connection | None = None,
+    ):
         """Initialize the asset registry.
 
         Args:
@@ -201,7 +206,7 @@ class AssetRegistry:
                 AssetVersionState(AssetVersionStatus(status)),
             )
         return None
-    
+
 
 @dataclass
 class AssetVersion:

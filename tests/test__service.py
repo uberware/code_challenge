@@ -11,7 +11,11 @@ def test__load__missing_payload():
     """Test the load command missing the payload."""
     response = client.post("/v1/load")
     assert response.status_code == 422
-    assert response.json() == {"detail": [{"type": "missing", "loc": ["body"], "msg": "Field required", "input": None}]}
+    assert response.json() == {
+        "detail": [
+            {"type": "missing", "loc": ["body"], "msg": "Field required", "input": None}
+        ]
+    }
 
 
 def test__load__missing_file(tmp_path):
@@ -50,4 +54,27 @@ def test__load__bad_file(bad_json_file):
     assert response.status_code == 422
     assert response.json() == {
         "detail": f"File failed validation: {bad_json_file}",
+    }
+
+
+def test__add_asset__valid():
+    """Test the add asset command with valid payload."""
+    response = client.post(
+        "/v1/add_asset", json={"name": "banana", "asset_type": "prop"}
+    )
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "success",
+        "message": "Added asset: name='banana' asset_type='prop'",
+    }
+
+
+def test__add_asset__invalid():
+    """Test the add asset command with invalid payload."""
+    response = client.post(
+        "/v1/add_asset", json={"name": "banana", "asset_type": "bad"}
+    )
+    assert response.status_code == 422
+    assert response.json() == {
+        "detail": "Asset failed validation: name='banana' asset_type='bad'",
     }

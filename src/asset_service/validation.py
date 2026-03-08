@@ -1,11 +1,19 @@
 """Utilties for validating data."""
+
 from collections import defaultdict
 from typing import Any
 
 from pydantic import ValidationError
 
 from asset_service import logger
-from asset_service.db import Asset, AssetVersion, AssetType, AssetVersionKey, AssetVersionState, AssetVersionStatus
+from asset_service.db import (
+    Asset,
+    AssetVersion,
+    AssetType,
+    AssetVersionKey,
+    AssetVersionState,
+    AssetVersionStatus,
+)
 
 
 def validate_asset_version(item: Any) -> tuple[Asset | None, AssetVersion | None]:
@@ -41,7 +49,8 @@ def validate_asset_version(item: Any) -> tuple[Asset | None, AssetVersion | None
             [
                 f"Ignoring unknown key: {key}"
                 for key in item
-                if key not in ["asset", "name", "type", "department", "version", "status"]
+                if key
+                not in ["asset", "name", "type", "department", "version", "status"]
             ]
         )
 

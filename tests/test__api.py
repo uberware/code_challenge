@@ -12,7 +12,7 @@ from asset_service import api, db
 def mock_asset_registry(mocker):
     """A fixture that mocks the AssetRegistry class."""
     mock_registry = MagicMock()
-    mocker.patch("asset_service.api.AssetRegistry", return_value=mock_registry)
+    mocker.patch("asset_service.api.db.AssetRegistry", return_value=mock_registry)
     return mock_registry
 
 
@@ -37,12 +37,10 @@ def test__load_from_json__wrong_data_type(tmp_path, caplog):
     assert "did not contain a list. Got: <class 'dict'>" in caplog.text
 
 
-@pytest.mark.parametrize(
-    "cast", [str, Path]
-)
+@pytest.mark.parametrize("cast", [str, Path])
 def test__load_from_json__string_or_path(valid_json_file, cast, mock_asset_registry):
     """Test load_from_json with a string or path."""
-    api.load_from_json(cast(valid_json_file))
+    assert api.load_from_json(cast(valid_json_file)) is True
     mock_asset_registry.asset.assert_has_calls(
         [
             call("hero", "character"),
@@ -51,9 +49,24 @@ def test__load_from_json__string_or_path(valid_json_file, cast, mock_asset_regis
     )
     mock_asset_registry.version.assert_has_calls(
         [
-            call(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1, db.AssetVersionStatus.ACTIVE),
-            call(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 2, db.AssetVersionStatus.ACTIVE),
-            call(db.Asset("hero", db.AssetType.FX), "texturing", 1, db.AssetVersionStatus.ACTIVE),
+            call(
+                db.Asset("hero", db.AssetType.CHARACTER),
+                "modeling",
+                1,
+                db.AssetVersionStatus.ACTIVE,
+            ),
+            call(
+                db.Asset("hero", db.AssetType.CHARACTER),
+                "modeling",
+                2,
+                db.AssetVersionStatus.ACTIVE,
+            ),
+            call(
+                db.Asset("hero", db.AssetType.FX),
+                "texturing",
+                1,
+                db.AssetVersionStatus.ACTIVE,
+            ),
         ]
     )
     assert mock_asset_registry.asset.call_count == 2
@@ -65,3 +78,16 @@ def test__load_from_json__empty_file(tmp_path):
     filename = tmp_path / "empty.json"
     filename.write_text("[]")
     assert api.load_from_json(filename) is False
+
+
+@pytest.mark.parametrize("input_type", ["fx", db.AssetType.FX])
+def test__add_asset__valid(input_type, mock_asset_registry):
+    """Test add_asset with valid data."""
+    assert api.add_asset("name", input_type) is not None
+    mock_asset_registry.asset.assert_has_calls([call("name", db.AssetType.FX)])
+
+
+def test__add_asset__invalid(mock_asset_registry):
+    """Test add_asset with invalid data."""
+    assert api.add_asset("name", "bad type") is None
+    mock_asset_registry.asset.assert_not_called()

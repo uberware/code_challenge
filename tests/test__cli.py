@@ -49,3 +49,21 @@ def test__load__partial_data(partial_json_file, caplog):
     assert f"Loading assets from: {partial_json_file}" in result.output
     assert f"Failed to load assets from: {partial_json_file}" not in result.output
     assert "Has version gaps: [1, 3]" in caplog.text
+
+
+def test__add_asset__valid():
+    """Test add asset with valid data."""
+    runner = CliRunner()
+    result = runner.invoke(cli.cli, ["add", "name", "fx"])
+    assert result.exit_code == 0
+    assert "Adding asset: name/fx" in result.output
+    assert "Failed to add asset: name/fx" not in result.output
+
+
+def test__add_asset__invalid():
+    """Test add asset with invalid data."""
+    runner = CliRunner()
+    result = runner.invoke(cli.cli, ["add", "name", "bad type"])
+    assert result.exit_code == 1
+    assert "Adding asset: name/bad type" in result.output
+    assert "Failed to add asset: name/bad type" in result.output

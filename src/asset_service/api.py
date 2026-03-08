@@ -4,20 +4,27 @@ import json
 from pathlib import Path
 from typing import Union
 
-from asset_service import logger
-from asset_service.db import AssetRegistry
+from pydantic import ValidationError
+
+from asset_service import db, logger
 from asset_service.validation import find_good_versions
 
 
-def load_from_json(filename: Union[Path, str]) -> bool:
+def load_from_json(
+    filename: Union[Path, str], *, registry: db.AssetRegistry | None = None
+) -> bool:
     """Load asset version data from a JSON file.
 
     Args:
         filename: The filename to load the data from, expects to contain a list of asset version objects
+        registry: The asset registry instance to use. None creates one on demand.
 
     Returns:
         True if the file was successfully loaded, False otherwise
         TODO: more error reporting for error/partial/complete results
+
+    Raises:
+        TypeError: if registry is not an instance of AssetRegistry or None
     """
     # Validate and load the JSON file
     if isinstance(filename, str):
@@ -39,9 +46,9 @@ def load_from_json(filename: Union[Path, str]) -> bool:
 
     # Store the valid asset versions into the database
     # TODO: Optimize bulk database operation
-    registry = AssetRegistry()
+    registry = registry or db.AssetRegistry()
     for asset in good_versions:
-        registry.asset(asset.name, asset.asset_type)
+        add_asset(asset.name, asset.asset_type, registry=registry)
         for version in good_versions[asset]:
             registry.version(
                 asset, version.key.department, version.key.version, version.state.status
@@ -49,3 +56,30 @@ def load_from_json(filename: Union[Path, str]) -> bool:
 
     # only considered successful if some data was loaded
     return bool(good_versions)
+
+
+def add_asset(
+    asset_name: str,
+    asset_type: str | db.AssetType,
+    *,
+    registry: db.AssetRegistry | None = None,
+) -> db.Asset | None:
+    """Add an asset to the registry.
+
+    Args:
+        asset_name: The name of the asset to add.
+        asset_type: The type of the asset to add.
+        registry: The asset registry to use. None creates one on demand.
+
+    Returns:
+        The added asset object or None on failure
+    """
+    # Validate the arguments
+    try:
+        if not isinstance(asset_type, db.AssetType):
+            asset_type = db.AssetType(asset_type)
+    except (ValueError, TypeError, ValidationError):
+        logger.error(f"Invalid asset data: {asset_name} {asset_type}")
+        return None
+    registry = registry or db.AssetRegistry()
+    return registry.asset(asset_name, asset_type)

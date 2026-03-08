@@ -41,7 +41,9 @@ def test__validate_version_list__does_not_start_at_1():
     """Test validate_version_list works as expected with versions that start above 1."""
     asset = db.Asset("asset_name", db.AssetType.FX)
     versions = [make_asset_version(asset, number=it) for it in range(2, 6)]
-    assert validation.validate_version_list(versions) == {"department": ["Versions do not start at 1: 2"]}
+    assert validation.validate_version_list(versions) == {
+        "department": ["Versions do not start at 1: 2"]
+    }
 
 
 def test__validate_version_list__gaps():
@@ -49,7 +51,9 @@ def test__validate_version_list__gaps():
     asset = db.Asset("asset_name", db.AssetType.FX)
     versions = [make_asset_version(asset, number=it) for it in range(1, 6)]
     del versions[2]
-    assert validation.validate_version_list(versions) == {"department": ["Has version gaps: [1, 2, 4, 5]"]}
+    assert validation.validate_version_list(versions) == {
+        "department": ["Has version gaps: [1, 2, 4, 5]"]
+    }
 
 
 def test__validate_version_list__duplicate():
@@ -57,7 +61,9 @@ def test__validate_version_list__duplicate():
     asset = db.Asset("asset_name", db.AssetType.FX)
     versions = [make_asset_version(asset, number=it) for it in range(1, 6)]
     versions.append(make_asset_version(asset, number=2))
-    assert validation.validate_version_list(versions) == {"department": ["Has duplicate versions: [1, 2, 3, 4, 5, 2]"]}
+    assert validation.validate_version_list(versions) == {
+        "department": ["Has duplicate versions: [1, 2, 3, 4, 5, 2]"]
+    }
 
 
 def test__validate_asset_version__valid_with_extra_fields(valid_data, caplog):
@@ -65,7 +71,10 @@ def test__validate_asset_version__valid_with_extra_fields(valid_data, caplog):
     raw_data = valid_data[0]
     raw_data["extra"] = None
     asset = db.Asset("hero", db.AssetType.CHARACTER)
-    assert validation.validate_asset_version(raw_data) == (asset, make_asset_version(asset, department="modeling", number=1))
+    assert validation.validate_asset_version(raw_data) == (
+        asset,
+        make_asset_version(asset, department="modeling", number=1),
+    )
     assert "Ignoring unknown key: extra" in caplog.text
 
 
@@ -86,9 +95,7 @@ def test__validate_asset_version__missing_asset(caplog):
     assert "Item missing asset information" in caplog.text
 
 
-@pytest.mark.parametrize(
-    "missing", ["name", "type"]
-)
+@pytest.mark.parametrize("missing", ["name", "type"])
 def test__validate_asset_version__missing__asset_value(missing, valid_data, caplog):
     """Test find_good_versions works as expected with missing asset values."""
     raw_data = valid_data[0]
@@ -97,9 +104,7 @@ def test__validate_asset_version__missing__asset_value(missing, valid_data, capl
     assert f"Unable to determine asset {missing}" in caplog.text
 
 
-@pytest.mark.parametrize(
-    "missing", ["department", "version", "status"]
-)
+@pytest.mark.parametrize("missing", ["department", "version", "status"])
 def test__validate_asset_version__missing__value(missing, valid_data, caplog):
     """Test find_good_versions works as expected with missing values."""
     raw_data = valid_data[0]
@@ -118,10 +123,10 @@ def test__validate_asset_version__validation_error__asset(valid_data, caplog):
     assert "input_value=None" in caplog.text
 
 
-@pytest.mark.parametrize(
-    "missing", ["department", "version"]
-)
-def test__validate_asset_version__validation_error__asset_version_key(missing, valid_data, caplog):
+@pytest.mark.parametrize("missing", ["department", "version"])
+def test__validate_asset_version__validation_error__asset_version_key(
+    missing, valid_data, caplog
+):
     """Test find_good_versions works as expected with invalid asset version key data."""
     raw_data = valid_data[0]
     raw_data[missing] = None
@@ -142,7 +147,7 @@ def test__find_good_versions__valid(valid_data, caplog):
         ],
         expected_fx: [
             make_asset_version(expected_fx, department="texturing", number=1),
-        ]
+        ],
     }
     assert caplog.text == ""
 
@@ -169,6 +174,9 @@ def test__find_good_versions__version_issue(valid_data, caplog):
             make_asset_version(expected_fx, department="texturing", number=1),
         ]
     }
-    assert "Asset(name='hero', asset_type=<AssetType.CHARACTER: 'character'>)" in caplog.text
+    assert (
+        "Asset(name='hero', asset_type=<AssetType.CHARACTER: 'character'>)"
+        in caplog.text
+    )
     assert "No good versions supplied for: " in caplog.text
     assert "Has version gaps: [1, 3]" in caplog.text

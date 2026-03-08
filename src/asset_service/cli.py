@@ -15,9 +15,10 @@ def cli(ctx):
     ctx.ensure_object(dict)
     working_folder = Path(__file__).resolve().parent.parent
     print(working_folder)
-    if not working_folder in sys.path:
+    if working_folder not in sys.path:
         sys.path.append(str(working_folder))
     from asset_service import api
+
     ctx.obj.update({"service": api})
 
 
@@ -40,6 +41,9 @@ def load(ctx, file_path):
 def add(ctx, asset_name, asset_type):
     """Add an asset from a JSON file."""
     _service = ctx.obj["service"]
+    click.echo(f"Adding asset: {asset_name}/{asset_type}")
+    if not _service.add_asset(asset_name, asset_type):
+        sys.exit(f"Failed to add asset: {asset_name}/{asset_type}")
 
 
 @cli.command()

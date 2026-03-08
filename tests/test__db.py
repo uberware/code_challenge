@@ -14,10 +14,12 @@ def memory_db():
 
 def test__asset_registry_init(memory_db):
     """Test the tables are created when initializing an AssetRegistry."""
-    registry = db.AssetRegistry(connection=memory_db)
+    db.AssetRegistry(connection=memory_db)
 
     cursor = memory_db.cursor()
-    cursor.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name IN ('assets', 'asset_versions')")
+    cursor.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name IN ('assets', 'asset_versions')"
+    )
     rows = cursor.fetchall()
     assert rows == [(2,)]
 
@@ -28,7 +30,9 @@ def test__asset_registry_init__idempotent(memory_db):
     registry._init_db()
 
     cursor = memory_db.cursor()
-    cursor.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name IN ('assets', 'asset_versions')")
+    cursor.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name IN ('assets', 'asset_versions')"
+    )
     rows = cursor.fetchall()
     assert rows == [(2,)]
 
@@ -63,7 +67,9 @@ def test__register_asset_version(memory_db):
     registry = db.AssetRegistry(connection=memory_db)
     state = registry.version(db.Asset("name", db.AssetType.FX), "texturing", 1)
     cursor = memory_db.cursor()
-    cursor.execute("SELECT name, asset_type, department, version, status FROM asset_versions")
+    cursor.execute(
+        "SELECT name, asset_type, department, version, status FROM asset_versions"
+    )
     rows = cursor.fetchall()
     assert rows == [("name", "fx", "texturing", 1, "active")]
     assert state.status == db.AssetVersionStatus.ACTIVE
@@ -75,7 +81,9 @@ def test__register_asset_version__idempotent(memory_db):
     registry.version(db.Asset("name", db.AssetType.FX), "texturing", 1)
     state = registry.version(db.Asset("name", db.AssetType.FX), "texturing", 1)
     cursor = memory_db.cursor()
-    cursor.execute("SELECT name, asset_type, department, version, status FROM asset_versions")
+    cursor.execute(
+        "SELECT name, asset_type, department, version, status FROM asset_versions"
+    )
     rows = cursor.fetchall()
     assert rows == [("name", "fx", "texturing", 1, "active")]
     assert state.status == db.AssetVersionStatus.ACTIVE

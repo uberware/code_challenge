@@ -7,29 +7,45 @@ from pydantic import BaseModel
 
 from asset_service import api
 
+
 class FileRequest(BaseModel):
     """Request model for file upload."""
 
     filename: Path
 
 
+class AssetRequest(BaseModel):
+    """Request model for asset upload."""
+
+    name: str
+    asset_type: str
+
+
 router = APIRouter()
-
-
-@router.get("/")
-async def get_root():
-    """Root handler."""
-    return {"message": "Could have documentation here."}
 
 
 @router.post("/load", description="Load assets from a JSON file")
 async def load(payload: FileRequest):
     """Load from a json file."""
     if not payload.filename.is_file():
-        raise HTTPException(status_code=404, detail=f"File not found: {payload.filename}")
+        raise HTTPException(
+            status_code=404, detail=f"File not found: {payload.filename}"
+        )
     if not api.load_from_json(payload.filename):
-        raise HTTPException(status_code=422, detail=f"File failed validation: {payload.filename}")
+        raise HTTPException(
+            status_code=422, detail=f"File failed validation: {payload.filename}"
+        )
     return {"status": "success", "message": f"Loaded assets from: {payload.filename}"}
+
+
+@router.post("/add_asset", description="Upload assets to a file")
+async def add_asset(payload: AssetRequest):
+    """Add an asset."""
+    if not api.add_asset(payload.name, payload.asset_type):
+        raise HTTPException(
+            status_code=422, detail=f"Asset failed validation: {payload}"
+        )
+    return {"status": "success", "message": f"Added asset: {payload}"}
 
 
 app = FastAPI()
