@@ -53,9 +53,22 @@ async def load(req: FileReq):
 @router.post("/add", description="Add a single asset")
 async def add_asset(req: AssetReq):
     """Add an asset."""
-    if not api.add_asset(req.name, req.asset_type, registry=db.AssetRegistry(req.registry)):
+    if not api.add_asset(
+        req.name, req.asset_type, registry=db.AssetRegistry(req.registry)
+    ):
         raise HTTPException(status_code=422, detail=f"Asset failed validation: {req}")
     return {"status": "success", "message": f"Added asset: {req}"}
+
+
+@router.get("/get/{name}/{asset_type}", description="Get a specific asset")
+async def get_asset(name: str, asset_type: str, registry: str | None = None):
+    """Get a specific asset."""
+    reg = db.AssetRegistry(registry)
+    if not api.get_asset(name, asset_type, registry=reg):
+        raise HTTPException(
+            status_code=404, detail=f"Asset not found: {name}/{asset_type}"
+        )
+    return {"status": "success", "message": f"Found Asset: {name}/{asset_type}"}
 
 
 @router.post("/versions/add", description="Add a single version")

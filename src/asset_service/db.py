@@ -103,7 +103,16 @@ class AssetRegistry:
         )
         self.conn.commit()
 
-    def asset(self, name: str, asset_type: AssetType) -> Asset:
+    def register_asset(self, name: str, asset_type: AssetType) -> Asset:
+        """Register an asset.
+
+        Args:
+            name: Asset name.
+            asset_type: Asset type.
+
+        Returns:
+            Asset object with the name and asset type.
+        """
         cur = self.conn.cursor()
         cur.execute(
             """
@@ -114,13 +123,24 @@ class AssetRegistry:
         self.conn.commit()
         return Asset(name, asset_type)
 
-    def version(
+    def register_version(
         self,
         asset: Asset,
         department: str,
         version: int,
         status: AssetVersionStatus = AssetVersionStatus.ACTIVE,
     ) -> AssetVersionState:
+        """Register an asset version.
+
+        Args:
+            asset: Asset object this version belongs to
+            department: Department name
+            version: Version number
+            status: Version status
+
+        Returns:
+            State object with the status provided
+        """
         cur = self.conn.cursor()
         cur.execute(
             """
@@ -159,6 +179,28 @@ class AssetRegistry:
     # --------------------------------------------------
     # Queries
     # --------------------------------------------------
+
+    def get_asset(self, name: str, asset_type: AssetType) -> Asset | None:
+        """Retrieve an asset by name and asset type.
+
+        Args:
+            name: Asset name.
+            asset_type: Asset type.
+
+        Returns:
+            Asset object if found, None if not found.
+        """
+        cur = self.conn.cursor()
+        cur.execute(
+            """
+            SELECT * FROM assets WHERE name = ? AND asset_type = ?
+            """,
+            (name, asset_type),
+        )
+        row = cur.fetchone()
+        if row:
+            return Asset(name, asset_type)
+        return None
 
     def versions_for(self, asset: Asset, department: str | None = None):
         cur = self.conn.cursor()

@@ -57,6 +57,10 @@ def add(ctx, asset_name, asset_type):
 def get(ctx, asset_name, asset_type):
     """Get an asset by name and type."""
     _service = ctx.obj["service"]
+    asset = _service.get_asset(asset_name, asset_type, registry=ctx.obj["registry"])
+    if asset is None:
+        sys.exit(f"Asset not found: {asset_name}/{asset_type}")
+    click.echo(f"Found Asset: {asset_name}/{asset_type}")
 
 
 @cli.command(name="list")
@@ -102,7 +106,9 @@ def versions_add(ctx, asset_name, asset_type, department, version_num, status):
         sys.exit(f"Failed to add asset: {asset_name}/{asset_type}")
     click.echo(f"Adding version: {department}/{version_num} - {status}")
     if (
-        _service.add_version(asset, department, version_num, status, registry=ctx.obj["registry"])
+        _service.add_version(
+            asset, department, version_num, status, registry=ctx.obj["registry"]
+        )
         is None
     ):
         sys.exit(f"Failed to add version: {department}/{version_num} - {status}")

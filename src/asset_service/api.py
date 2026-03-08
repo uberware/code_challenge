@@ -47,9 +47,9 @@ def load_from_json(
     # TODO: Optimize bulk database operation
     registry = registry or db.AssetRegistry()
     for asset in good_versions:
-        registry.asset(asset.name, asset.asset_type)
+        registry.register_asset(asset.name, asset.asset_type)
         for version in good_versions[asset]:
-            registry.version(
+            registry.register_version(
                 asset, version.key.department, version.key.version, version.state.status
             )
 
@@ -78,10 +78,10 @@ def add_asset(
         if not isinstance(asset_type, db.AssetType):
             asset_type = db.AssetType(asset_type)
     except (ValueError, TypeError, ValidationError) as e:
-        logger.error(f"Invalid asset data: {asset_name} {asset_type}\n{e}")
+        logger.error(f"Invalid asset data: {asset_name}/{asset_type}\n{e}")
         return None
     registry = registry or db.AssetRegistry()
-    return registry.asset(asset_name, asset_type)
+    return registry.register_asset(asset_name, asset_type)
 
 
 def add_version(
@@ -118,9 +118,35 @@ def add_version(
         logger.error(f"Invalid AssetVersion: {version} {department} {status}\n{e}")
         return None
     registry = registry or db.AssetRegistry()
-    return registry.version(
+    return registry.register_version(
         asset,
         asset_version.key.department,
         asset_version.key.version,
         asset_version.state.status,
     )
+
+
+def get_asset(
+    asset_name: str,
+    asset_type: str | db.AssetType,
+    *,
+    registry: db.AssetRegistry | None = None,
+) -> db.Asset | None:
+    """Get an asset from the registry.
+
+    Args:
+        asset_name: The name of the asset to get.
+        asset_type: The type of the asset to get.
+        registry: The asset registry to use. None creates one on demand.
+
+    Returns:
+        The asset object or None on failure or not found
+    """
+    try:
+        if not isinstance(asset_type, db.AssetType):
+            asset_type = db.AssetType(asset_type)
+    except (ValueError, TypeError, ValidationError) as e:
+        logger.error(f"Invalid Asset type: {asset_name}/{asset_type}\n{e}")
+        return None
+    registry = registry or db.AssetRegistry()
+    return registry.get_asset(asset_name, asset_type)

@@ -2,7 +2,7 @@
 
 from click.testing import CliRunner
 
-from asset_service import cli
+from asset_service import cli, db
 
 
 # Load
@@ -28,7 +28,9 @@ def test__load__bad_file(tmp_db, tmp_path):
 def test__load__valid_file(valid_json_file, tmp_db, caplog):
     """Test load command with valid file."""
     runner = CliRunner()
-    result = runner.invoke(cli.cli, ["--registry", tmp_db, "load", str(valid_json_file)])
+    result = runner.invoke(
+        cli.cli, ["--registry", tmp_db, "load", str(valid_json_file)]
+    )
     assert result.exit_code == 0
     assert f"Loading assets from: {valid_json_file}" in result.output
     assert f"Failed to load assets from: {valid_json_file}" not in result.output
@@ -47,7 +49,9 @@ def test__load__invalid_file(bad_json_file, tmp_db, tmp_path):
 def test__load__partial_data(partial_json_file, tmp_db, caplog):
     """Test load command with partial data."""
     runner = CliRunner()
-    result = runner.invoke(cli.cli, ["--registry", tmp_db, "load", str(partial_json_file)])
+    result = runner.invoke(
+        cli.cli, ["--registry", tmp_db, "load", str(partial_json_file)]
+    )
     assert result.exit_code == 0
     assert f"Loading assets from: {partial_json_file}" in result.output
     assert f"Failed to load assets from: {partial_json_file}" not in result.output
@@ -82,7 +86,8 @@ def test__add_version__valid(tmp_db):
     """Test add version with valid data."""
     runner = CliRunner()
     result = runner.invoke(
-        cli.cli, ["--registry", tmp_db, "versions", "add", "name", "set", "dep", "1", "active"]
+        cli.cli,
+        ["--registry", tmp_db, "versions", "add", "name", "set", "dep", "1", "active"],
     )
     assert result.exit_code == 0
     assert "Adding asset: name/set" in result.output
@@ -95,7 +100,18 @@ def test__add_version__invalid_asset(tmp_db):
     """Test add version with invalid asset data."""
     runner = CliRunner()
     result = runner.invoke(
-        cli.cli, ["--registry", tmp_db, "versions", "add", "name", "bad type", "dep", "1", "active"]
+        cli.cli,
+        [
+            "--registry",
+            tmp_db,
+            "versions",
+            "add",
+            "name",
+            "bad type",
+            "dep",
+            "1",
+            "active",
+        ],
     )
     assert result.exit_code == 1
     assert "Adding asset: name/bad type" in result.output
@@ -108,10 +124,31 @@ def test__add_version__invalid_version(tmp_db):
     """Test add version with invalid version data."""
     runner = CliRunner()
     result = runner.invoke(
-        cli.cli, ["--registry", tmp_db, "versions", "add", "name", "set", "dep", "1", "bad"]
+        cli.cli,
+        ["--registry", tmp_db, "versions", "add", "name", "set", "dep", "1", "bad"],
     )
     assert result.exit_code == 1
     assert "Adding asset: name/set" in result.output
     assert "Failed to add asset: name/set" not in result.output
     assert "Adding version: dep/1 - bad" in result.output
     assert "Failed to add version: dep/1 - bad" in result.output
+
+
+# get_asset
+
+
+def test__get_asset__missing(tmp_db):
+    """Test get_asset with an empty database (missing value)."""
+    runner = CliRunner()
+    result = runner.invoke(cli.cli, ["--registry", tmp_db, "get", "name", "fx"])
+    assert result.exit_code == 1
+    assert "Asset not found: name/fx" in result.output
+
+
+def test__get_asset__valid(tmp_db):
+    """Test get_asset with valid data."""
+    db.AssetRegistry(tmp_db).register_asset("name", db.AssetType.FX)
+    runner = CliRunner()
+    result = runner.invoke(cli.cli, ["--registry", tmp_db, "get", "name", "fx"])
+    assert result.exit_code == 0
+    assert "Found Asset: name/fx" in result.output
