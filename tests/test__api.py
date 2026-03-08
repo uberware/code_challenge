@@ -1,23 +1,67 @@
-"""Unit tests for the db module."""
+"""Tests for api module."""
+
+from pathlib import Path
+from unittest.mock import MagicMock, call
 
 import pytest
 
-from asset_service import api
+from asset_service import api, db
 
 
-def make_asset_version(
-    asset: api.Asset, department: str | None = None, number: int = 1
-) -> api.AssetVersion:
-    """Helper to make AssetVersion objects"""
-    department = department or "department"
-    return api.AssetVersion(
-        api.AssetVersionKey(asset, department, number),
-        api.AssetVersionState(api.AssetVersionStatus.ACTIVE),
+@pytest.fixture
+def mock_asset_registry(mocker):
+    """A fixture that mocks the AssetRegistry class."""
+    mock_registry = MagicMock()
+    mocker.patch("asset_service.api.AssetRegistry", return_value=mock_registry)
+    return mock_registry
+
+
+def test__load_from_json__invalid_filename_type(caplog):
+    """Test load_from_json with invalid filename type."""
+    assert api.load_from_json(1) is False
+    assert "filename must be a string or Path. Got: <class 'int'>" in caplog.text
+
+
+def test__load_from_json__file_does_not_exist(tmp_path, caplog):
+    """Test load_from_json with a file that does not exist."""
+    filename = tmp_path / "test.json"
+    assert api.load_from_json(filename) is False
+    assert f"file does not exist: {filename}" in caplog.text
+
+
+def test__load_from_json__wrong_data_type(tmp_path, caplog):
+    """Test load_from_json with a wrong data type."""
+    filename = tmp_path / "test.json"
+    filename.write_text('{"problem": "wrong data type"}')
+    assert api.load_from_json(filename) is False
+    assert "did not contain a list. Got: <class 'dict'>" in caplog.text
+
+
+@pytest.mark.parametrize(
+    "cast", [str, Path]
+)
+def test__load_from_json__string_or_path(valid_json_file, cast, mock_asset_registry):
+    """Test load_from_json with a string or path."""
+    api.load_from_json(cast(valid_json_file))
+    mock_asset_registry.asset.assert_has_calls(
+        [
+            call("hero", "character"),
+            call("hero", "fx"),
+        ]
     )
+    mock_asset_registry.version.assert_has_calls(
+        [
+            call(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1, db.AssetVersionStatus.ACTIVE),
+            call(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 2, db.AssetVersionStatus.ACTIVE),
+            call(db.Asset("hero", db.AssetType.FX), "texturing", 1, db.AssetVersionStatus.ACTIVE),
+        ]
+    )
+    assert mock_asset_registry.asset.call_count == 2
+    assert mock_asset_registry.version.call_count == 3
 
 
-def test__validate_version_list__empty():
-    """Test validate_version_list works as expectedwith empty version list."""
-    asset = api.Asset("asset_name", api.AssetType.FX)
-    versions = [make_asset_version(asset, number=it) for it in range(1, 6)]
-    assert api._validate_version_list(versions)
+def test__load_from_json__empty_file(tmp_path):
+    """Test load_from_json with an empty list file."""
+    filename = tmp_path / "empty.json"
+    filename.write_text("[]")
+    assert api.load_from_json(filename) is False

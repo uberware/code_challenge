@@ -57,9 +57,15 @@ class AssetVersionState:
 
 
 class AssetRegistry:
-    def __init__(self):
-        logger.info(f"Starting up database: {DATABASE_PATH}")
-        self.conn = sqlite3.connect(DATABASE_PATH)
+    def __init__(self, database_path: Path | str | None = None, *, connection: sqlite3.Connection | None = None):
+        """Initialize the asset registry.
+
+        Args:
+            database_path: Supply a database path. None uses default
+        """
+        database_path = database_path or DATABASE_PATH
+        logger.info(f"Database: {database_path}")
+        self.conn = connection or sqlite3.connect(database_path)
         self._init_db()
 
     def _init_db(self):

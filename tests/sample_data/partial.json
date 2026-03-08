@@ -1,0 +1,5 @@
+[
+  {"asset": {"name": "hero", "type": "character"}, "department": "modeling", "version": 1, "status": "active"},
+  {"asset": {"name": "hero", "type": "character"}, "department": "modeling", "version": 3, "status": "active"},
+  {"asset": {"name": "hero", "type": "fx"}, "department": "texturing", "version": 1, "status": "active"}
+]

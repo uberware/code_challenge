@@ -2,6 +2,9 @@
 Command-line interface for the Asset Service.
 """
 
+import sys
+from pathlib import Path
+
 import click
 
 
@@ -9,7 +12,13 @@ import click
 @click.pass_context
 def cli(ctx):
     """Asset Validation & Registration Service CLI"""
-    pass
+    ctx.ensure_object(dict)
+    working_folder = Path(__file__).resolve().parent.parent
+    print(working_folder)
+    if not working_folder in sys.path:
+        sys.path.append(str(working_folder))
+    from asset_service import api
+    ctx.obj.update({"service": api})
 
 
 @cli.command()
@@ -18,6 +27,10 @@ def cli(ctx):
 def load(ctx, file_path):
     """Load assets from a JSON file."""
     _service = ctx.obj["service"]
+    file_path = Path(file_path).resolve()
+    click.echo(f"Loading assets from: {file_path}")
+    if not _service.load_from_json(file_path):
+        sys.exit(f"Failed to load assets from: {file_path}")
 
 
 @cli.command()
