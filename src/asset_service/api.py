@@ -17,6 +17,7 @@ def load_from_json(filename: Union[Path, str]) -> bool:
 
     Returns:
         True if the file was successfully loaded, False otherwise
+        TODO: more error reporting for error/partial/complete results
     """
     # Validate and load the JSON file
     if isinstance(filename, str):

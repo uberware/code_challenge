@@ -1,8 +1,11 @@
 # Core dependencies
 click==8.1.7
 pydantic
+fastapi
 
 # Development and testing
 pytest==7.4.3
 pytest-cov==4.1.0
 pytest-mock
+uvicorn
+httpx
