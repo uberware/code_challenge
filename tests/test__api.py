@@ -149,13 +149,13 @@ def test__get_asset__bad_type(mock_asset_registry, caplog):
     assert "Invalid Asset type: hero/bad type" in caplog.text
 
 
-# get_assets
-
-
 def test__get_asset__not_found(tmp_db, caplog):
     """Test get_asset with empty database."""
     assert list(api.list_assets(registry=db.AssetRegistry(tmp_db))) == []
     assert "Invalid Asset type: " not in caplog.text
+
+
+# get_assets
 
 
 @pytest.mark.parametrize("asset_type", ["character", db.AssetType.CHARACTER])
