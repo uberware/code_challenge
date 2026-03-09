@@ -87,45 +87,6 @@ def add_asset(
     return registry.register_asset(asset_name, asset_type)
 
 
-def add_asset_version(
-    asset: db.Asset,
-    department: str,
-    version: int,
-    status: str | db.AssetVersionStatus | None = None,
-    *,
-    registry: db.AssetRegistry | None = None,
-) -> db.AssetVersionState | None:
-    """Add an asset version to the registry.
-
-    Does not add the Asset itself to the registry.
-
-    Args:
-        asset: The asset to add the version to.
-        department: The department of the asset.
-        version: The version of the asset.
-        status: The status of the asset.
-        registry: The asset registry to use. None creates one on demand.
-
-    Returns:
-        The asset version status or None on failure
-    """
-    # Validate the arguments
-    try:
-        if status is None:
-            status = db.AssetVersionStatus.ACTIVE
-        asset_version = db.make_asset_version(asset, department, version, status)
-    except (ValueError, TypeError, ValidationError) as e:
-        logger.error(f"Invalid AssetVersion: {version} {department} {status}\n{e}")
-        return None
-    registry = registry or db.AssetRegistry()
-    return registry.register_version(
-        asset,
-        asset_version.key.department,
-        asset_version.key.version,
-        asset_version.state.status,
-    )
-
-
 def get_asset(
     asset_name: str,
     asset_type: str | db.AssetType,
@@ -176,6 +137,45 @@ def list_assets(
         yield from ()
     registry = registry or db.AssetRegistry()
     yield from registry.get_assets(asset_name, asset_type)
+
+
+def add_asset_version(
+    asset: db.Asset,
+    department: str,
+    version: int,
+    status: str | db.AssetVersionStatus | None = None,
+    *,
+    registry: db.AssetRegistry | None = None,
+) -> db.AssetVersionState | None:
+    """Add an asset version to the registry.
+
+    Does not add the Asset itself to the registry.
+
+    Args:
+        asset: The asset to add the version to.
+        department: The department of the asset.
+        version: The version of the asset.
+        status: The status of the asset.
+        registry: The asset registry to use. None creates one on demand.
+
+    Returns:
+        The asset version status or None on failure
+    """
+    # Validate the arguments
+    try:
+        if status is None:
+            status = db.AssetVersionStatus.ACTIVE
+        asset_version = db.make_asset_version(asset, department, version, status)
+    except (ValueError, TypeError, ValidationError) as e:
+        logger.error(f"Invalid AssetVersion: {version} {department} {status}\n{e}")
+        return None
+    registry = registry or db.AssetRegistry()
+    return registry.register_version(
+        asset,
+        asset_version.key.department,
+        asset_version.key.version,
+        asset_version.state.status,
+    )
 
 
 def get_asset_version(

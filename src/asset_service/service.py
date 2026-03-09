@@ -135,7 +135,7 @@ async def get_version(
 
 
 @router.get("/versions/list/{name}/{asset_type}", description="List versions")
-async def get_versions(
+async def list_versions(
     name: str,
     asset_type: str,
     department: str | None = None,
