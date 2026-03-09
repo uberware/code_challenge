@@ -1,4 +1,6 @@
-"""Common test fixtures."""
+"""
+Common test fixtures.
+"""
 
 import json
 import sqlite3

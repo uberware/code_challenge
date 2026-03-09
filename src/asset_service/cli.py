@@ -82,6 +82,15 @@ def get(ctx, asset_name, asset_type):
 def list_cmd(ctx, asset_name, asset_type):
     """List all assets."""
     _service = ctx.obj["service"]
+    click.echo(
+        f"Listing Assets: name='{asset_name or ''}' asset_type='{asset_type or ''}'"
+    )
+    results = list(
+        _service.get_assets(asset_name, asset_type, registry=ctx.obj["registry"])
+    )
+    for result in results:
+        click.echo(f"Found Asset: {result.name}/{result.asset_type}")
+    sys.exit(0 if results else 1)
 
 
 @cli.group()

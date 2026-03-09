@@ -1,4 +1,6 @@
-"""FastAPI microservice application."""
+"""
+FastAPI microservice application.
+"""
 
 from pathlib import Path
 
@@ -69,6 +71,22 @@ async def get_asset(name: str, asset_type: str, registry: str | None = None):
             status_code=404, detail=f"Asset not found: {name}/{asset_type}"
         )
     return {"status": "success", "message": f"Found Asset: {name}/{asset_type}"}
+
+
+@router.get("/list", description="List Assets that match criteria")
+async def list_assets(
+    name: str | None = None, asset_type: str | None = None, registry: str | None = None
+):
+    """List assets that match criteria."""
+    reg = db.AssetRegistry(registry)
+    # TODO: this may not be the best asynchronous way to build the list
+    result = list(api.get_assets(name, asset_type, registry=reg))
+    if not result:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No Assets found: name='{name or ''}' asset_type='{asset_type or ''}'",
+        )
+    return {"status": "success", "message": "Found Assets", "assets": result}
 
 
 @router.post("/versions/add", description="Add a single version")

@@ -1,6 +1,9 @@
-"""Asset data types and container."""
+"""
+Asset data types and storage interface.
+"""
 
 import sqlite3
+from collections.abc import Iterator
 from enum import StrEnum, auto
 from pathlib import Path
 
@@ -201,6 +204,37 @@ class AssetRegistry:
         if row:
             return Asset(name, asset_type)
         return None
+
+    def get_assets(
+        self, name: str | None = None, asset_type: AssetType | None = None
+    ) -> Iterator[Asset]:
+        """Generator to get all assets matching a name or asset type filter.
+
+        Args:
+            name: Asset name filter, None matches all assets.
+            asset_type: Asset type filter, None matches all assets.
+
+        Yields:
+            List each object found.
+        """
+        cur = self.conn.cursor()
+        if name and asset_type:
+            where = "WHERE name = ? AND asset_type = ?"
+            data = (name, asset_type)
+        elif name:
+            where = "WHERE name = ?"
+            data = (name,)
+        elif asset_type is not None:
+            where = "WHERE asset_type = ?"
+            data = (asset_type,)
+        else:
+            where = data = None
+        if data is not None:
+            cur.execute(f"SELECT name, asset_type FROM assets {where}", data)
+        else:
+            cur.execute("SELECT name, asset_type FROM assets")
+        for name, status_type in cur.fetchall():
+            yield Asset(name, status_type)
 
     def versions_for(self, asset: Asset, department: str | None = None):
         cur = self.conn.cursor()

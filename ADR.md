@@ -6,3 +6,4 @@ Architectural Design Record
 - don't use class just to group functions
 - several hacks for speed to get up and running that need real design to fix
 - Python API designed for maximum modularity and performance, CLI/service for redundancy
+- Tests do not use "production" database

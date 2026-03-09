@@ -1,8 +1,9 @@
 """Tests the cli module."""
 
+import pytest
 from click.testing import CliRunner
 
-from asset_service import cli, db
+from asset_service import api, cli, db
 
 
 # Load
@@ -152,3 +153,31 @@ def test__get_asset__valid(tmp_db):
     result = runner.invoke(cli.cli, ["--registry", tmp_db, "get", "name", "fx"])
     assert result.exit_code == 0
     assert "Found Asset: name/fx" in result.output
+
+
+# list
+
+
+@pytest.mark.parametrize(
+    "name, asset_type, expected",
+    [
+        (None, None, [("hero", "character"), ("hero", "fx"), ("spoon", "prop")]),
+        ("hero", None, [("hero", "character"), ("hero", "fx")]),
+        (None, "fx", [("hero", "fx")]),
+        ("spoon", "prop", [("spoon", "prop")]),
+        ("spoon", "fx", []),
+    ],
+)
+def test__list(name, asset_type, expected, tmp_db, valid_json_file):
+    """Test list."""
+    api.load_from_json(valid_json_file, registry=db.AssetRegistry(tmp_db))
+    runner = CliRunner()
+    command = ["--registry", tmp_db, "list"]
+    if name:
+        command += ["--asset-name", name]
+    if asset_type:
+        command += ["--asset-type", asset_type]
+    result = runner.invoke(cli.cli, command)
+    assert result.exit_code == 0 if expected else 1
+    for names in expected:
+        assert f"Found Asset: {names[0]}/{names[1]}" in result.output

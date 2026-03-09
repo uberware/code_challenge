@@ -1,4 +1,6 @@
-"""Utilties for validating data."""
+"""
+Utilities for validating data.
+"""
 
 from collections import defaultdict
 from typing import Any

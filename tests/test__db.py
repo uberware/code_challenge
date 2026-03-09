@@ -1,6 +1,8 @@
 """Test the db module."""
 
-from asset_service import db
+import pytest
+
+from asset_service import api, db
 
 
 def test__asset_registry_init(memory_db):
@@ -80,11 +82,54 @@ def test__register_asset_version__idempotent(memory_db):
     assert state.status == db.AssetVersionStatus.ACTIVE
 
 
-def test__get_asset(tmp_db):
-    """Test the get_asset function."""
+def test__get_asset__not_found(tmp_db):
+    """Test the get_asset function on an empty database (not found)."""
     registry = db.AssetRegistry(tmp_db)
     assert registry.get_asset("test", db.AssetType.FX) is None
+
+
+def test__get_asset__found(tmp_db):
+    """Test the get_asset function after adding the asset."""
+    registry = db.AssetRegistry(tmp_db)
     registry.register_asset("test", db.AssetType.FX)
     assert registry.get_asset("test", db.AssetType.FX) == db.Asset(
         "test", db.AssetType.FX
     )
+
+
+def test__get_assets__empty(tmp_db):
+    """Test the get_assets function on an empty database."""
+    registry = db.AssetRegistry(tmp_db)
+    assert list(registry.get_assets()) == []
+
+
+@pytest.mark.parametrize(
+    "name, asset_type, expected",
+    [
+        (
+            None,
+            None,
+            [
+                db.Asset("hero", db.AssetType.CHARACTER),
+                db.Asset("hero", db.AssetType.FX),
+                db.Asset("spoon", db.AssetType.PROP),
+            ],
+        ),
+        (
+            "hero",
+            None,
+            [
+                db.Asset("hero", db.AssetType.CHARACTER),
+                db.Asset("hero", db.AssetType.FX),
+            ],
+        ),
+        (None, db.AssetType.PROP, [db.Asset("spoon", db.AssetType.PROP)]),
+        ("hero", db.AssetType.FX, [db.Asset("hero", db.AssetType.FX)]),
+        ("spoon", db.AssetType.FX, []),
+    ],
+)
+def test__get_assets__no_filter(name, asset_type, expected, tmp_db, valid_json_file):
+    """Test the get_assets function with data."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    assert list(registry.get_assets(name=name, asset_type=asset_type)) == expected

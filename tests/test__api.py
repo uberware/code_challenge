@@ -72,8 +72,8 @@ def test__load_from_json__string_or_path(valid_json_file, cast, mock_asset_regis
             ),
         ]
     )
-    assert mock_asset_registry.register_asset.call_count == 2
-    assert mock_asset_registry.register_version.call_count == 3
+    assert mock_asset_registry.register_asset.call_count == 3
+    assert mock_asset_registry.register_version.call_count == 4
 
 
 def test__load_from_json__empty_file(tmp_path, tmp_db):
@@ -139,3 +139,25 @@ def test__get_asset__bad_type(mock_asset_registry, caplog):
     """Test get_asset with invalid data."""
     assert api.get_asset("hero", "bad type") is None
     assert "Invalid Asset type: hero/bad type" in caplog.text
+
+
+# get_assets
+
+
+@pytest.mark.parametrize("asset_type", ["character", db.AssetType.CHARACTER])
+def test__get_assets__valid(asset_type, valid_json_file, tmp_db, caplog):
+    """Test get_assets with valid data."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    assert list(api.get_assets(asset_type=asset_type, registry=registry)) == [
+        db.Asset("hero", db.AssetType.CHARACTER)
+    ]
+    assert "Invalid Asset type: " not in caplog.text
+
+
+def test__get_assets__bad_type(mock_asset_registry, caplog):
+    """Test get_assets with invalid data."""
+    registry = db.AssetRegistry(mock_asset_registry)
+    assert list(api.get_assets(asset_type="bad type", registry=registry)) == []
+    assert "Invalid Asset type: bad type" in caplog.text
+    mock_asset_registry.get_asset.assert_not_called()

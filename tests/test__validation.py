@@ -140,6 +140,7 @@ def test__find_good_versions__valid(valid_data, caplog):
     """Test find_good_versions works as expected with valid versions."""
     expected_character = db.Asset("hero", db.AssetType.CHARACTER)
     expected_fx = db.Asset("hero", db.AssetType.FX)
+    expected_prop = db.Asset("spoon", db.AssetType.PROP)
     assert validation.find_good_versions(valid_data) == {
         expected_character: [
             make_asset_version(expected_character, department="modeling", number=1),
@@ -147,6 +148,9 @@ def test__find_good_versions__valid(valid_data, caplog):
         ],
         expected_fx: [
             make_asset_version(expected_fx, department="texturing", number=1),
+        ],
+        expected_prop: [
+            make_asset_version(expected_prop, department="modeling", number=1),
         ],
     }
     assert caplog.text == ""
@@ -156,10 +160,14 @@ def test__find_good_versions__validate_issue(valid_data, caplog):
     """Test find_good_versions works as expected when _validate_asset_version fails."""
     valid_data[2]["asset"]["name"] = None
     expected_character = db.Asset("hero", db.AssetType.CHARACTER)
+    expected_prop = db.Asset("spoon", db.AssetType.PROP)
     assert validation.find_good_versions(valid_data) == {
         expected_character: [
             make_asset_version(expected_character, department="modeling", number=1),
             make_asset_version(expected_character, department="modeling", number=2),
+        ],
+        expected_prop: [
+            make_asset_version(expected_prop, department="modeling", number=1),
         ],
     }
     assert "1 validation error for Asset" in caplog.text
@@ -169,10 +177,14 @@ def test__find_good_versions__version_issue(valid_data, caplog):
     """Test find_good_versions works as expected when _validate_version_list fails."""
     valid_data[1]["version"] = 3
     expected_fx = db.Asset("hero", db.AssetType.FX)
+    expected_prop = db.Asset("spoon", db.AssetType.PROP)
     assert validation.find_good_versions(valid_data) == {
         expected_fx: [
             make_asset_version(expected_fx, department="texturing", number=1),
-        ]
+        ],
+        expected_prop: [
+            make_asset_version(expected_prop, department="modeling", number=1),
+        ],
     }
     assert (
         "Asset(name='hero', asset_type=<AssetType.CHARACTER: 'character'>)"

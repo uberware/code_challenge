@@ -1,8 +1,11 @@
-"""Tests for the service module."""
+"""
+Tests for the service module.
+"""
 
+import pytest
 from fastapi.testclient import TestClient
 
-from asset_service import db
+from asset_service import api, db
 from asset_service.service import app
 
 client = TestClient(app)
@@ -175,4 +178,42 @@ def test__get_asset__valid(tmp_db):
     assert response.json() == {
         "status": "success",
         "message": "Found Asset: banana/prop",
+    }
+
+
+# list
+
+
+@pytest.mark.parametrize(
+    "name, asset_type, expected",
+    [
+        (None, None, [("hero", "character"), ("hero", "fx"), ("spoon", "prop")]),
+        ("hero", None, [("hero", "character"), ("hero", "fx")]),
+        (None, "fx", [("hero", "fx")]),
+        ("spoon", "prop", [("spoon", "prop")]),
+    ],
+)
+def test__list__found(name, asset_type, expected, tmp_db, valid_json_file):
+    """Test list when finding something."""
+    api.load_from_json(valid_json_file, registry=db.AssetRegistry(tmp_db))
+    url = f"/v1/list?registry={tmp_db}"
+    if name:
+        url = f"{url}&name={name}"
+    if asset_type:
+        url = f"{url}&asset_type={asset_type}"
+    response = client.get(url)
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "success",
+        "message": "Found Assets",
+        "assets": [{"name": it[0], "asset_type": it[1]} for it in expected],
+    }
+
+
+def test__list__not_found(tmp_db):
+    """Test list when not finding something."""
+    response = client.get(f"/v1/list?registry={tmp_db}")
+    assert response.status_code == 404
+    assert response.json() == {
+        "detail": "No Assets found: name='' asset_type=''",
     }

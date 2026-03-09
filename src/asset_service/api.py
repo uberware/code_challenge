@@ -1,6 +1,9 @@
-"""The API for the asset_service commands"""
+"""
+The Python API for the Asset Service.
+"""
 
 import json
+from collections.abc import Iterator
 from pathlib import Path
 from typing import Union
 
@@ -150,3 +153,29 @@ def get_asset(
         return None
     registry = registry or db.AssetRegistry()
     return registry.get_asset(asset_name, asset_type)
+
+
+def get_assets(
+    asset_name: str | None = None,
+    asset_type: str | db.AssetType | None = None,
+    *,
+    registry: db.AssetRegistry | None = None,
+) -> Iterator[db.Asset]:
+    """Get a list of Assets that match the given filters.
+
+    Args:
+        asset_name: The name of the asset to get.
+        asset_type: The type of the asset to get.
+        registry: The asset registry to use. None creates one on demand.
+
+    Yields:
+        Each Asset found that matches the given filters.
+    """
+    try:
+        if not isinstance(asset_type, db.AssetType):
+            asset_type = db.AssetType(asset_type)
+    except (ValueError, TypeError, ValidationError) as e:
+        logger.error(f"Invalid Asset type: {asset_type}\n{e}")
+        yield from ()
+    registry = registry or db.AssetRegistry()
+    yield from registry.get_assets(asset_name, asset_type)
