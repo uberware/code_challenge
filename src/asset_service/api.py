@@ -87,7 +87,7 @@ def add_asset(
     return registry.register_asset(asset_name, asset_type)
 
 
-def add_version(
+def add_asset_version(
     asset: db.Asset,
     department: str,
     version: int,
@@ -155,13 +155,13 @@ def get_asset(
     return registry.get_asset(asset_name, asset_type)
 
 
-def get_assets(
+def list_assets(
     asset_name: str | None = None,
     asset_type: str | db.AssetType | None = None,
     *,
     registry: db.AssetRegistry | None = None,
 ) -> Iterator[db.Asset]:
-    """Get a list of Assets that match the given filters.
+    """Generator to list Assets that match the given filters.
 
     Args:
         asset_name: The name of the asset to get.
@@ -181,7 +181,7 @@ def get_assets(
     yield from registry.get_assets(asset_name, asset_type)
 
 
-def get_version(
+def get_asset_version(
     asset_name: str,
     asset_type: str | db.AssetType,
     department: str,
@@ -209,3 +209,41 @@ def get_version(
         return None
     registry = registry or db.AssetRegistry()
     return registry.get_version(db.Asset(asset_name, asset_type), department, version)
+
+
+def list_asset_versions(
+    asset_name: str,
+    asset_type: str | db.AssetType,
+    department: str | None = None,
+    version: int | None = None,
+    status: str | db.AssetVersionStatus | None = None,
+    *,
+    registry: db.AssetRegistry | None = None,
+) -> Iterator[db.AssetVersion]:
+    """Generator to list asset versions that match the given filters.
+
+    Args:
+        asset_name: The name of the asset to get.
+        asset_type: The type of the asset to get.
+        department: Optionally filter by the department of the asset.
+        version: Optionally filter by the version of the asset.
+        status: Optionally filter by the status of the asset.
+        registry: The asset registry to use. None creates one on demand.
+
+    Yields:
+        Each AssetVersion found that matches the given filters.
+    """
+    try:
+        if not isinstance(asset_type, db.AssetType):
+            asset_type = db.AssetType(asset_type)
+        if status is not None and not isinstance(status, db.AssetVersionStatus):
+            status = db.AssetVersionStatus(status)
+    except (ValueError, TypeError, ValidationError) as e:
+        logger.error(
+            f"Invalid Asset Version input: asset_type={asset_type} status={status}\n{e}"
+        )
+        yield from ()
+    registry = registry or db.AssetRegistry()
+    yield from registry.get_versions(
+        db.Asset(asset_name, asset_type), department, version, status
+    )

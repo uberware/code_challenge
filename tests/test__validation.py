@@ -6,13 +6,15 @@ from asset_service import db, validation
 
 
 def make_asset_version(
-    asset: db.Asset, department: str | None = None, number: int = 1
+    asset: db.Asset, department: str | None = None, number: int = 1, active: bool = True
 ) -> db.AssetVersion:
     """Helper to make AssetVersion objects"""
     department = department or "department"
     return db.AssetVersion(
         db.AssetVersionKey(asset, department, number),
-        db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
+        db.AssetVersionState(
+            db.AssetVersionStatus.ACTIVE if active else db.AssetVersionStatus.INACTIVE
+        ),
     )
 
 
@@ -73,7 +75,7 @@ def test__validate_asset_version__valid_with_extra_fields(valid_data, caplog):
     asset = db.Asset("hero", db.AssetType.CHARACTER)
     assert validation.validate_asset_version(raw_data) == (
         asset,
-        make_asset_version(asset, department="modeling", number=1),
+        make_asset_version(asset, department="modeling", number=1, active=False),
     )
     assert "Ignoring unknown key: extra" in caplog.text
 
@@ -143,8 +145,11 @@ def test__find_good_versions__valid(valid_data, caplog):
     expected_prop = db.Asset("spoon", db.AssetType.PROP)
     assert validation.find_good_versions(valid_data) == {
         expected_character: [
-            make_asset_version(expected_character, department="modeling", number=1),
+            make_asset_version(
+                expected_character, department="modeling", number=1, active=False
+            ),
             make_asset_version(expected_character, department="modeling", number=2),
+            make_asset_version(expected_character, department="texturing", number=1),
         ],
         expected_fx: [
             make_asset_version(expected_fx, department="texturing", number=1),
@@ -158,13 +163,16 @@ def test__find_good_versions__valid(valid_data, caplog):
 
 def test__find_good_versions__validate_issue(valid_data, caplog):
     """Test find_good_versions works as expected when _validate_asset_version fails."""
-    valid_data[2]["asset"]["name"] = None
+    valid_data[3]["asset"]["name"] = None
     expected_character = db.Asset("hero", db.AssetType.CHARACTER)
     expected_prop = db.Asset("spoon", db.AssetType.PROP)
     assert validation.find_good_versions(valid_data) == {
         expected_character: [
-            make_asset_version(expected_character, department="modeling", number=1),
+            make_asset_version(
+                expected_character, department="modeling", number=1, active=False
+            ),
             make_asset_version(expected_character, department="modeling", number=2),
+            make_asset_version(expected_character, department="texturing", number=1),
         ],
         expected_prop: [
             make_asset_version(expected_prop, department="modeling", number=1),
@@ -176,6 +184,7 @@ def test__find_good_versions__validate_issue(valid_data, caplog):
 def test__find_good_versions__version_issue(valid_data, caplog):
     """Test find_good_versions works as expected when _validate_version_list fails."""
     valid_data[1]["version"] = 3
+    del valid_data[2]
     expected_fx = db.Asset("hero", db.AssetType.FX)
     expected_prop = db.Asset("spoon", db.AssetType.PROP)
     assert validation.find_good_versions(valid_data) == {

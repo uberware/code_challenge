@@ -242,3 +242,32 @@ def test__versions__get__valid(tmp_db, valid_json_file):
             "status": "active",
         },
     }
+
+
+def test__versions__list__not_found(tmp_db):
+    """Test versions list with empty database."""
+    response = client.get(f"/v1/versions/list/hero/character?registry={tmp_db}")
+    assert response.status_code == 404
+    assert response.json() == {
+        "detail": "No Versions found: hero/character filters: None None None"
+    }
+
+
+def test__versions__list__valid(tmp_db, valid_json_file):
+    """Test versions list with valid database."""
+    api.load_from_json(valid_json_file, registry=db.AssetRegistry(tmp_db))
+    response = client.get(
+        f"/v1/versions/list/hero/character?department=texturing&registry={tmp_db}"
+    )
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "success",
+        "versions": [
+            {
+                "asset": {"name": "hero", "asset_type": "character"},
+                "department": "texturing",
+                "version": 1,
+                "status": "active",
+            },
+        ],
+    }

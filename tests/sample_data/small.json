@@ -1,6 +1,7 @@
 [
-  {"asset": {"name": "hero", "type": "character"}, "department": "modeling", "version": 1, "status": "active"},
+  {"asset": {"name": "hero", "type": "character"}, "department": "modeling", "version": 1, "status": "inactive"},
   {"asset": {"name": "hero", "type": "character"}, "department": "modeling", "version": 2, "status": "active"},
+  {"asset": {"name": "hero", "type": "character"}, "department": "texturing", "version": 1, "status": "active"},
   {"asset": {"name": "hero", "type": "fx"}, "department": "texturing", "version": 1, "status": "active"},
   {"asset": {"name": "spoon", "type": "prop"}, "department": "modeling", "version": 1, "status": "active"}
 ]

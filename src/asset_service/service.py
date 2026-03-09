@@ -80,7 +80,7 @@ async def list_assets(
     """List assets that match criteria."""
     reg = db.AssetRegistry(registry)
     # TODO: this may not be the best asynchronous way to build the list
-    result = list(api.get_assets(name, asset_type, registry=reg))
+    result = list(api.list_assets(name, asset_type, registry=reg))
     if not result:
         raise HTTPException(
             status_code=404,
@@ -96,7 +96,7 @@ async def add_version(req: VersionReq):
     asset = api.add_asset(req.name, req.asset_type, registry=reg)
     if not asset:
         raise HTTPException(status_code=422, detail=f"Asset failed validation: {req}")
-    if not api.add_version(
+    if not api.add_asset_version(
         asset, req.department, req.version, req.status, registry=reg
     ):
         raise HTTPException(status_code=422, detail=f"Version failed validation: {req}")
@@ -116,7 +116,7 @@ async def get_version(
 ):
     """Get a specific version."""
     reg = db.AssetRegistry(registry)
-    result = api.get_version(name, asset_type, department, version, registry=reg)
+    result = api.get_asset_version(name, asset_type, department, version, registry=reg)
     if not result:
         raise HTTPException(
             status_code=404,
@@ -132,6 +132,42 @@ async def get_version(
             "status": result.state.status,
         },
     }
+
+
+@router.get("/versions/list/{name}/{asset_type}", description="List versions")
+async def get_versions(
+    name: str,
+    asset_type: str,
+    department: str | None = None,
+    version: int | None = None,
+    status: str | None = None,
+    registry: str | None = None,
+):
+    """List versions of a specific asset."""
+    reg = db.AssetRegistry(registry)
+    # TODO: this may not be the best asynchronous way to build the list
+    result = []
+    for item in api.list_asset_versions(
+        name, asset_type, department, version, status, registry=reg
+    ):
+        # convert to the original data format
+        result.append(
+            {
+                "asset": {
+                    "name": item.key.asset.name,
+                    "asset_type": item.key.asset.asset_type,
+                },
+                "department": item.key.department,
+                "version": item.key.version,
+                "status": item.state.status,
+            }
+        )
+    if not result:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No Versions found: {name}/{asset_type} filters: {department} {version} {status}",
+        )
+    return {"status": "success", "versions": result}
 
 
 app = FastAPI()

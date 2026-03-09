@@ -223,25 +223,22 @@ class AssetRegistry:
             asset_type: Asset type filter, None matches all assets.
 
         Yields:
-            List each object found.
+            Each Asset found.
         """
+        # Build the query
+        query = "SELECT name, asset_type FROM assets"
+        conditions = []
+        params = []
+        if name:
+            conditions.append("name = ?")
+            params.append(name)
+        if asset_type:
+            conditions.append("asset_type = ?")
+            params.append(asset_type)
+        if conditions:
+            query += " WHERE " + " AND ".join(conditions)
         cur = self.conn.cursor()
-        if name and asset_type:
-            where = "WHERE name = ? AND asset_type = ?"
-            data = (name, asset_type)
-        elif name:
-            where = "WHERE name = ?"
-            data = (name,)
-        elif asset_type is not None:
-            where = "WHERE asset_type = ?"
-            data = (asset_type,)
-        else:
-            where = data = None
-        if data is not None:
-            # This triggers bandit with a Possible SQL injection vector that can be ignored
-            cur.execute(f"SELECT name, asset_type FROM assets {where}", data)  # nosec B608
-        else:
-            cur.execute("SELECT name, asset_type FROM assets")
+        cur.execute(query, params)
         for name, status_type in cur.fetchall():
             yield Asset(name, status_type)
 
@@ -274,6 +271,48 @@ class AssetRegistry:
                 AssetVersionState(AssetVersionStatus(row[4])),
             )
         return None
+
+    def get_versions(
+        self,
+        asset: Asset,
+        department: str | None = None,
+        version: int | None = None,
+        status: AssetVersionStatus | None = None,
+    ) -> Iterator[AssetVersion]:
+        """List asset versions that match the given filters.
+
+        Args:
+            asset: Asset to find the version for.
+            department: Optionally filter by department.
+            version: Optionally filter by version.
+            status: Optionally filter by status.
+
+        Yields:
+            Each AssetVersion found.
+        """
+        query = """SELECT name, asset_type, department, version, status 
+        FROM asset_versions
+        WHERE name = ? AND asset_type = ?"""
+        conditions = []
+        params = [asset.name, asset.asset_type]
+        if department:
+            conditions.append("department = ?")
+            params.append(department)
+        if version:
+            conditions.append("version = ?")
+            params.append(version)
+        if status:
+            conditions.append("status = ?")
+            params.append(status)
+        if conditions:
+            query += " AND " + " AND ".join(conditions)
+        cur = self.conn.cursor()
+        cur.execute(query, params)
+        for name, asset_type, department, version, status in cur.fetchall():
+            yield AssetVersion(
+                AssetVersionKey(asset, department, version),
+                AssetVersionState(AssetVersionStatus(status)),
+            )
 
     def versions_for(self, asset: Asset, department: str | None = None):
         cur = self.conn.cursor()

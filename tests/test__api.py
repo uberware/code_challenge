@@ -56,12 +56,18 @@ def test__load_from_json__string_or_path(valid_json_file, cast, mock_asset_regis
                 db.Asset("hero", db.AssetType.CHARACTER),
                 "modeling",
                 1,
-                db.AssetVersionStatus.ACTIVE,
+                db.AssetVersionStatus.INACTIVE,
             ),
             call(
                 db.Asset("hero", db.AssetType.CHARACTER),
                 "modeling",
                 2,
+                db.AssetVersionStatus.ACTIVE,
+            ),
+            call(
+                db.Asset("hero", db.AssetType.CHARACTER),
+                "texturing",
+                1,
                 db.AssetVersionStatus.ACTIVE,
             ),
             call(
@@ -73,7 +79,7 @@ def test__load_from_json__string_or_path(valid_json_file, cast, mock_asset_regis
         ]
     )
     assert mock_asset_registry.register_asset.call_count == 3
-    assert mock_asset_registry.register_version.call_count == 4
+    assert mock_asset_registry.register_version.call_count == 5
 
 
 def test__load_from_json__empty_file(tmp_path, tmp_db):
@@ -107,7 +113,7 @@ def test__add_asset__invalid(mock_asset_registry):
 def test__add_version__valid(status_type, mock_asset_registry):
     """Test add_version with valid data."""
     asset = db.Asset("hero", db.AssetType.CHARACTER)
-    assert api.add_version(asset, "department", 1, status_type) is not None
+    assert api.add_asset_version(asset, "department", 1, status_type) is not None
     mock_asset_registry.register_version.assert_has_calls(
         [
             call(asset, "department", 1, db.AssetVersionStatus.ACTIVE),
@@ -118,7 +124,7 @@ def test__add_version__valid(status_type, mock_asset_registry):
 def test__add_version__invalid(mock_asset_registry):
     """Test add_version with invalid data."""
     asset = db.Asset("hero", db.AssetType.CHARACTER)
-    assert api.add_version(asset, "department", 1, "bad") is None
+    assert api.add_asset_version(asset, "department", 1, "bad") is None
     mock_asset_registry.register_version.assert_not_called()
 
 
@@ -146,7 +152,7 @@ def test__get_asset__bad_type(mock_asset_registry, caplog):
 
 def test__get_asset__not_found(tmp_db, caplog):
     """Test get_asset with empty database."""
-    assert list(api.get_assets(registry=db.AssetRegistry(tmp_db))) == []
+    assert list(api.list_assets(registry=db.AssetRegistry(tmp_db))) == []
     assert "Invalid Asset type: " not in caplog.text
 
 
@@ -155,7 +161,7 @@ def test__get_assets__valid(asset_type, valid_json_file, tmp_db, caplog):
     """Test get_assets with valid data."""
     registry = db.AssetRegistry(tmp_db)
     api.load_from_json(valid_json_file, registry=registry)
-    assert list(api.get_assets(asset_type=asset_type, registry=registry)) == [
+    assert list(api.list_assets(asset_type=asset_type, registry=registry)) == [
         db.Asset("hero", db.AssetType.CHARACTER)
     ]
     assert "Invalid Asset type: " not in caplog.text
@@ -164,7 +170,7 @@ def test__get_assets__valid(asset_type, valid_json_file, tmp_db, caplog):
 def test__get_assets__bad_type(mock_asset_registry, caplog):
     """Test get_assets with invalid data."""
     registry = db.AssetRegistry(mock_asset_registry)
-    assert list(api.get_assets(asset_type="bad type", registry=registry)) == []
+    assert list(api.list_assets(asset_type="bad type", registry=registry)) == []
     assert "Invalid Asset type: bad type" in caplog.text
     mock_asset_registry.get_asset.assert_not_called()
 
@@ -175,7 +181,8 @@ def test__get_assets__bad_type(mock_asset_registry, caplog):
 def test__get_version__not_found(tmp_db, caplog):
     """Test get_version with empty database (not found)."""
     registry = db.AssetRegistry(tmp_db)
-    assert api.get_version("hero", "fx", "texturing", 1, registry=registry) is None
+    result = api.get_asset_version("hero", "fx", "texturing", 1, registry=registry)
+    assert result is None
     assert "Invalid Asset type: " not in caplog.text
 
 
@@ -184,7 +191,9 @@ def test__get_version__valid(asset_type, valid_json_file, tmp_db, caplog):
     """Test get_assets with valid data."""
     registry = db.AssetRegistry(tmp_db)
     api.load_from_json(valid_json_file, registry=registry)
-    result = api.get_version("hero", asset_type, "texturing", 1, registry=registry)
+    result = api.get_asset_version(
+        "hero", asset_type, "texturing", 1, registry=registry
+    )
     assert result is not None
     assert result.key.asset == db.Asset("hero", db.AssetType.FX)
     assert result.key.department == "texturing"
@@ -195,7 +204,67 @@ def test__get_version__valid(asset_type, valid_json_file, tmp_db, caplog):
 def test__get_version__bad_type(mock_asset_registry, caplog):
     """Test get_version with invalid data."""
     registry = db.AssetRegistry(mock_asset_registry)
-    assert (
-        api.get_version("hero", "bad type", "texturing", 1, registry=registry) is None
+    result = api.get_asset_version(
+        "hero", "bad type", "texturing", 1, registry=registry
     )
+    assert result is None
     assert "Invalid Asset type: bad type" in caplog.text
+
+
+# list_asset_versions
+
+
+def test__list_asset_versions__not_found(tmp_db, caplog):
+    """Test list_asset_versions with empty database."""
+    registry = db.AssetRegistry(tmp_db)
+    result = list(api.list_asset_versions("hero", "character", registry=registry))
+    assert result == []
+    assert "Invalid Asset Version input: " not in caplog.text
+
+
+@pytest.mark.parametrize("asset_type", ["character", db.AssetType.CHARACTER])
+def test__list_asset_versions__valid(asset_type, tmp_db, valid_json_file, caplog):
+    """Test list_asset_versions with valid data."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    result = list(
+        api.list_asset_versions(
+            "hero", asset_type, department="texturing", registry=registry
+        )
+    )
+    assert result == [
+        db.AssetVersion(
+            db.AssetVersionKey(
+                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
+            ),
+            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
+        )
+    ]
+    assert "Invalid Asset Version input: " not in caplog.text
+
+
+@pytest.mark.parametrize("status", ["inactive", db.AssetVersionStatus.INACTIVE])
+def test__list_asset_versions__status(status, tmp_db, valid_json_file, caplog):
+    """Test list_asset_versions with different status types."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    result = list(
+        api.list_asset_versions("hero", "character", status=status, registry=registry)
+    )
+    assert result == [
+        db.AssetVersion(
+            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1),
+            db.AssetVersionState(db.AssetVersionStatus.INACTIVE),
+        )
+    ]
+    assert "Invalid Asset Version input: " not in caplog.text
+
+
+def test__list_asset_versions__bad_status(mock_asset_registry, caplog):
+    """Test list_asset_versions with invalid status."""
+    registry = db.AssetRegistry(mock_asset_registry)
+    result = list(
+        api.list_asset_versions("hero", "character", status="bad", registry=registry)
+    )
+    assert result == []
+    assert "Invalid Asset Version input: asset_type=character status=bad" in caplog.text

@@ -196,13 +196,37 @@ def test__versions__get__missing(tmp_db):
     assert "Version not found: name/fx - dept:1" in result.output
 
 
-def test__versions__get_valid(tmp_db, valid_json_file):
+def test__versions__get__valid(tmp_db, valid_json_file):
     """Test get_versions with valid data."""
     api.load_from_json(valid_json_file, registry=db.AssetRegistry(tmp_db))
     runner = CliRunner()
     result = runner.invoke(
         cli.cli,
         ["--registry", tmp_db, "versions", "get", "hero", "fx", "texturing", "1"],
+    )
+    assert result.exit_code == 0
+    assert "Found Version: hero/fx - texturing:1 = active" in result.output
+
+
+# versions list
+
+
+def test__versions__list__missing(tmp_db):
+    """Test get_versions with invalid data."""
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli, ["--registry", tmp_db, "versions", "list", "hero", "fx"]
+    )
+    assert result.exit_code == 1
+    assert "Found Version: hero/fx - texturing:1 = active" not in result.output
+
+
+def test__versions__list__valid(tmp_db, valid_json_file):
+    """Test listing versions with valid data."""
+    api.load_from_json(valid_json_file, registry=db.AssetRegistry(tmp_db))
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli, ["--registry", tmp_db, "versions", "list", "hero", "fx"]
     )
     assert result.exit_code == 0
     assert "Found Version: hero/fx - texturing:1 = active" in result.output

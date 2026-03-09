@@ -152,3 +152,96 @@ def test__get_version__found(tmp_db, valid_json_file):
     assert result.key.asset == db.Asset("hero", db.AssetType.FX)
     assert result.key.department == "texturing"
     assert result.key.version == 1
+
+
+def test__get_versions__not_found(tmp_db):
+    """Test the get_version function on an empty database."""
+    registry = db.AssetRegistry(tmp_db)
+    assert list(registry.get_versions(db.Asset("hero", db.AssetType.CHARACTER))) == []
+
+
+def test__get_versions__found(tmp_db, valid_json_file):
+    """Test the get_version function after adding data."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    result = list(registry.get_versions(db.Asset("hero", db.AssetType.CHARACTER)))
+    assert result == [
+        db.AssetVersion(
+            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1),
+            db.AssetVersionState(db.AssetVersionStatus.INACTIVE),
+        ),
+        db.AssetVersion(
+            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 2),
+            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
+        ),
+        db.AssetVersion(
+            db.AssetVersionKey(
+                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
+            ),
+            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
+        ),
+    ]
+
+
+def test__get_versions__found__department(tmp_db, valid_json_file):
+    """Test the get_version with a department after adding data."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    result = list(
+        registry.get_versions(
+            db.Asset("hero", db.AssetType.CHARACTER), department="texturing"
+        )
+    )
+    assert result == [
+        db.AssetVersion(
+            db.AssetVersionKey(
+                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
+            ),
+            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
+        ),
+    ]
+
+
+def test__get_versions__found__version(tmp_db, valid_json_file):
+    """Test the get_version with a version after adding data."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    result = list(
+        registry.get_versions(db.Asset("hero", db.AssetType.CHARACTER), version=1)
+    )
+    assert result == [
+        db.AssetVersion(
+            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1),
+            db.AssetVersionState(db.AssetVersionStatus.INACTIVE),
+        ),
+        db.AssetVersion(
+            db.AssetVersionKey(
+                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
+            ),
+            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
+        ),
+    ]
+
+
+def test__get_versions__found__status(tmp_db, valid_json_file):
+    """Test the get_versions with a status after adding data."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    result = list(
+        registry.get_versions(
+            db.Asset("hero", db.AssetType.CHARACTER),
+            status=db.AssetVersionStatus.ACTIVE,
+        )
+    )
+    assert result == [
+        db.AssetVersion(
+            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 2),
+            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
+        ),
+        db.AssetVersion(
+            db.AssetVersionKey(
+                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
+            ),
+            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
+        ),
+    ]

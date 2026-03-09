@@ -86,7 +86,7 @@ def list_cmd(ctx, asset_name, asset_type):
         f"Listing Assets: name='{asset_name or ''}' asset_type='{asset_type or ''}'"
     )
     results = list(
-        _service.get_assets(asset_name, asset_type, registry=ctx.obj["registry"])
+        _service.list_assets(asset_name, asset_type, registry=ctx.obj["registry"])
     )
     for result in results:
         click.echo(f"Found Asset: {result.name}/{result.asset_type}")
@@ -115,7 +115,7 @@ def versions_add(ctx, asset_name, asset_type, department, version_num, status):
         sys.exit(f"Failed to add asset: {asset_name}/{asset_type}")
     click.echo(f"Adding version: {department}/{version_num} - {status}")
     if (
-        _service.add_version(
+        _service.add_asset_version(
             asset, department, version_num, status, registry=ctx.obj["registry"]
         )
         is None
@@ -132,7 +132,7 @@ def versions_add(ctx, asset_name, asset_type, department, version_num, status):
 def versions_get(ctx, asset_name, asset_type, department, version_num):
     """Get a specific asset version."""
     _service = ctx.obj["service"]
-    result = _service.get_version(
+    result = _service.get_asset_version(
         asset_name, asset_type, department, version_num, registry=ctx.obj["registry"]
     )
     if result is None:
@@ -156,6 +156,27 @@ def versions_get(ctx, asset_name, asset_type, department, version_num):
 def versions_list(ctx, asset_name, asset_type, department, status, version):
     """List all versions of an asset."""
     _service = ctx.obj["service"]
+    click.echo(f"Listing versions for asset: {asset_name}/{asset_type}")
+    click.echo(
+        f"Filters: department={department or ''}, status={status or ''}, version={version or ''}"
+    )
+    result = list(
+        _service.list_asset_versions(
+            asset_name,
+            asset_type,
+            department,
+            version,
+            status,
+            registry=ctx.obj["registry"],
+        )
+    )
+    exit_code = 1
+    for item in result:
+        click.echo(
+            f"Found Version: {asset_name}/{asset_type} - {item.key.department}:{item.key.version} = {item.state.status}"
+        )
+        exit_code = 0
+    sys.exit(exit_code)
 
 
 def main():
