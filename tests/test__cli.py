@@ -230,3 +230,29 @@ def test__versions__list__valid(tmp_db, valid_json_file):
     )
     assert result.exit_code == 0
     assert "Found Version: hero/fx - texturing:1 = active" in result.output
+
+
+# Latest
+
+
+def test__versions__latest__missing(tmp_db):
+    """Test get_versions with invalid data."""
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli,
+        ["--registry", tmp_db, "versions", "latest", "hero", "character", "modeling"],
+    )
+    assert result.exit_code == 1
+    assert "No versions found: hero/character - modeling" in result.output
+
+
+def test__versions__latest__valid(tmp_db, valid_json_file):
+    """Test get_versions with valid data."""
+    api.load_from_json(valid_json_file, registry=db.AssetRegistry(tmp_db))
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli,
+        ["--registry", tmp_db, "versions", "latest", "hero", "character", "modeling"],
+    )
+    assert result.exit_code == 0
+    assert "Latest version: hero/character - modeling:2" in result.output

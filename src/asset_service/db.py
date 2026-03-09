@@ -67,6 +67,20 @@ class AssetVersion:
     state: AssetVersionState
 
 
+def make_asset_version(
+    asset: Asset,
+    department: str,
+    number: int = 1,
+    active: AssetVersionStatus | str | bool = True,
+) -> AssetVersion:
+    """Helper to make AssetVersion objects"""
+    if isinstance(active, bool):
+        active = AssetVersionStatus.ACTIVE if active else AssetVersionStatus.INACTIVE
+    return AssetVersion(
+        AssetVersionKey(asset, department, number), AssetVersionState(active)
+    )
+
+
 class AssetRegistry:
     def __init__(
         self,
@@ -165,29 +179,6 @@ class AssetRegistry:
         return AssetVersionState(status)
 
     # --------------------------------------------------
-    # Mutation
-    # --------------------------------------------------
-
-    def set_status(
-        self,
-        asset: Asset,
-        department: str,
-        version: int,
-        status: AssetVersionStatus,
-    ):
-        cur = self.conn.cursor()
-        cur.execute(
-            """
-            UPDATE asset_versions
-            SET status = ?
-            WHERE name = ? AND asset_type = ?
-            AND department = ? AND version = ?
-            """,
-            (status, asset.name, asset.asset_type, department, version),
-        )
-        self.conn.commit()
-
-    # --------------------------------------------------
     # Queries
     # --------------------------------------------------
 
@@ -258,18 +249,15 @@ class AssetRegistry:
         cur = self.conn.cursor()
         cur.execute(
             """
-            SELECT * 
+            SELECT status
             FROM asset_versions
             WHERE name = ? AND asset_type = ? AND department = ? AND version = ?
             """,
             (asset.name, asset.asset_type, department, version),
         )
-        row = cur.fetchone()
-        if row:
-            return AssetVersion(
-                AssetVersionKey(asset, department, version),
-                AssetVersionState(AssetVersionStatus(row[4])),
-            )
+        status = cur.fetchone()
+        if status:
+            return make_asset_version(asset, department, version, status[0])
         return None
 
     def get_versions(
@@ -309,54 +297,26 @@ class AssetRegistry:
         cur = self.conn.cursor()
         cur.execute(query, params)
         for name, asset_type, department, version, status in cur.fetchall():
-            yield AssetVersion(
-                AssetVersionKey(asset, department, version),
-                AssetVersionState(AssetVersionStatus(status)),
-            )
+            yield make_asset_version(asset, department, version, status)
 
-    def versions_for(self, asset: Asset, department: str | None = None):
-        cur = self.conn.cursor()
-        if department is None:
-            cur.execute(
-                """
-                SELECT department, version, status
-                FROM asset_versions
-                WHERE name=? AND asset_type=?
-                """,
-                (asset.name, asset.asset_type),
-            )
-        else:
-            cur.execute(
-                """
-                SELECT department, version, status
-                FROM asset_versions
-                WHERE name=? AND asset_type=? AND department=?
-                """,
-                (asset.name, asset.asset_type, department),
-            )
-        for dept, version, status in cur.fetchall():
-            yield (
-                AssetVersionKey(asset, dept, version),
-                AssetVersionState(AssetVersionStatus(status)),
-            )
+    def latest(
+        self, asset: Asset, department: str, active_only: bool = True
+    ) -> AssetVersion | None:
+        """Get the latest version of an asset for a specific department.
 
-    def latest(self, asset: Asset, department: str):
+        Args:
+            asset: Asset to find the latest version for.
+            department: The department to find the latest version for.
+            active_only: If True, inactive versions are ignored.
+        """
+        query = "SELECT version, status FROM asset_versions WHERE name = ? AND asset_type = ? AND department = ?"
+        if active_only:
+            query += " AND status = 'active'"
+        query += " ORDER BY version DESC LIMIT 1"
         cur = self.conn.cursor()
-        cur.execute(
-            """
-            SELECT version, status
-            FROM asset_versions
-            WHERE name=? AND asset_type=? AND department=?
-            ORDER BY version DESC
-            LIMIT 1
-            """,
-            (asset.name, asset.asset_type, department),
-        )
+        cur.execute(query, (asset.name, asset.asset_type, department))
         row = cur.fetchone()
         if row:
             version, status = row
-            return (
-                AssetVersionKey(asset, department, version),
-                AssetVersionState(AssetVersionStatus(status)),
-            )
+            return make_asset_version(asset, department, version, status)
         return None

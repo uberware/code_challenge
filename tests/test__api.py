@@ -233,12 +233,7 @@ def test__list_asset_versions__valid(asset_type, tmp_db, valid_json_file, caplog
         )
     )
     assert result == [
-        db.AssetVersion(
-            db.AssetVersionKey(
-                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
-            ),
-            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
-        )
+        db.make_asset_version(db.Asset("hero", db.AssetType.CHARACTER), "texturing"),
     ]
     assert "Invalid Asset Version input: " not in caplog.text
 
@@ -252,10 +247,9 @@ def test__list_asset_versions__status(status, tmp_db, valid_json_file, caplog):
         api.list_asset_versions("hero", "character", status=status, registry=registry)
     )
     assert result == [
-        db.AssetVersion(
-            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1),
-            db.AssetVersionState(db.AssetVersionStatus.INACTIVE),
-        )
+        db.make_asset_version(
+            db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1, False
+        ),
     ]
     assert "Invalid Asset Version input: " not in caplog.text
 
@@ -268,3 +262,26 @@ def test__list_asset_versions__bad_status(mock_asset_registry, caplog):
     )
     assert result == []
     assert "Invalid Asset Version input: asset_type=character status=bad" in caplog.text
+
+
+# Latest
+
+
+@pytest.mark.parametrize("asset_type", ["character", db.AssetType.CHARACTER])
+def test__latest__valid(asset_type, tmp_db, valid_json_file, caplog):
+    """Test get_latest with valid data."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    result = api.get_latest_version("hero", asset_type, "modeling", registry=registry)
+    assert result is not None
+    assert isinstance(result, db.AssetVersion)
+    assert result.key.version == 2
+    assert "Invalid Asset type: " not in caplog.text
+
+
+def test__latest__bad_type(mock_asset_registry, caplog):
+    """Test get_latest with invalid data."""
+    registry = db.AssetRegistry(mock_asset_registry)
+    result = api.get_latest_version("hero", "bad type", registry=registry)
+    assert result is None
+    assert "Invalid Asset type: bad type" in caplog.text

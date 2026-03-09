@@ -7,18 +7,10 @@ from typing import Any
 
 from pydantic import ValidationError
 
-from asset_service import logger
-from asset_service.db import (
-    Asset,
-    AssetVersion,
-    AssetType,
-    AssetVersionKey,
-    AssetVersionState,
-    AssetVersionStatus,
-)
+from asset_service import db, logger
 
 
-def validate_asset_version(item: Any) -> tuple[Asset | None, AssetVersion | None]:
+def validate_asset_version(item: Any) -> tuple[db.Asset | None, db.AssetVersion | None]:
     """Validate that the item is a dictionary and contains the required elements.
 
     Args:
@@ -63,10 +55,9 @@ def validate_asset_version(item: Any) -> tuple[Asset | None, AssetVersion | None
 
     # valdate item data
     try:
-        asset = Asset(asset_data["name"], AssetType(asset_data["type"]))
-        version = AssetVersion(
-            key=AssetVersionKey(asset, item["department"], item["version"]),
-            state=AssetVersionState(AssetVersionStatus(item["status"])),
+        asset = db.Asset(asset_data["name"], db.AssetType(asset_data["type"]))
+        version = db.make_asset_version(
+            asset, item["department"], item["version"], item["status"]
         )
     except (TypeError, ValueError, ValidationError) as e:
         logger.error(f"Invalid item:\n{item}\n{e}")
@@ -78,7 +69,7 @@ def validate_asset_version(item: Any) -> tuple[Asset | None, AssetVersion | None
     return asset, version
 
 
-def validate_version_list(version_list: list[AssetVersion]) -> dict[str, list[str]]:
+def validate_version_list(version_list: list[db.AssetVersion]) -> dict[str, list[str]]:
     """Validates that the version list starts at 1 and increments without gaps.
 
     Assumes version list is not empty.
@@ -104,7 +95,7 @@ def validate_version_list(version_list: list[AssetVersion]) -> dict[str, list[st
     return dict(failures)
 
 
-def find_good_versions(data: list) -> dict[Asset, list[AssetVersion]]:
+def find_good_versions(data: list) -> dict[db.Asset, list[db.AssetVersion]]:
     """Parses the raw data into valid asset version data ready to store.
 
     The required criteria are that the version starts at 1 and goes up by 1 without holes.
@@ -117,13 +108,13 @@ def find_good_versions(data: list) -> dict[Asset, list[AssetVersion]]:
         a dictionary mapping Assets to a list of AssetVersions
     """
     # build a table of asset versions
-    check_versions: dict[Asset, list[AssetVersion]] = defaultdict(list)
+    check_versions: dict[db.Asset, list[db.AssetVersion]] = defaultdict(list)
     for item in data:
         asset, version = validate_asset_version(item)
         if asset and version:
             check_versions[asset].append(version)
     # check each one to build the good final list of asset versions
-    good_versions: dict[Asset, list[AssetVersion]] = defaultdict(list)
+    good_versions: dict[db.Asset, list[db.AssetVersion]] = defaultdict(list)
     for asset, version_list in check_versions.items():
         # the list is not empty because the asset value would not exist
         # if there was not at least 1 valid version

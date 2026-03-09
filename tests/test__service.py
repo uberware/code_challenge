@@ -218,6 +218,9 @@ def test__list__not_found(tmp_db):
     }
 
 
+# get version
+
+
 def test__versions__get__not_found(tmp_db):
     """Test get_versions when not finding something."""
     response = client.get(f"/v1/versions/get/hero/fx/texturing/1?registry={tmp_db}")
@@ -242,6 +245,9 @@ def test__versions__get__valid(tmp_db, valid_json_file):
             "status": "active",
         },
     }
+
+
+# list versions
 
 
 def test__versions__list__not_found(tmp_db):
@@ -271,3 +277,30 @@ def test__versions__list__valid(tmp_db, valid_json_file):
             },
         ],
     }
+
+
+# latest version
+
+
+def test__versions__latest__not_found(tmp_db):
+    """Test versions list with empty database."""
+    response = client.get(f"/v1/versions/latest/hero/fx/texturing?registry={tmp_db}")
+    assert response.status_code == 404
+    assert response.json() == {
+        "detail": "No versions found: hero/fx - texturing active_only=True",
+    }
+
+
+@pytest.mark.parametrize("active, expected", [("true", 2), ("false", 3)])
+def test__versions__latest__valid(active, expected, tmp_db, valid_json_file):
+    """Test versions list with valid database."""
+    registry = db.AssetRegistry(tmp_db)
+    asset = db.Asset("hero", db.AssetType.FX)
+    api.add_asset_version(asset, "texturing", 1, "active", registry=registry)
+    api.add_asset_version(asset, "texturing", 2, "active", registry=registry)
+    api.add_asset_version(asset, "texturing", 3, "inactive", registry=registry)
+    response = client.get(
+        f"v1/versions/latest/hero/fx/texturing?active_only={active}&registry={tmp_db}"
+    )
+    assert response.status_code == 200
+    assert response.json() == {"status": "success", "version": expected}

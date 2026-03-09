@@ -5,30 +5,17 @@ import pytest
 from asset_service import db, validation
 
 
-def make_asset_version(
-    asset: db.Asset, department: str | None = None, number: int = 1, active: bool = True
-) -> db.AssetVersion:
-    """Helper to make AssetVersion objects"""
-    department = department or "department"
-    return db.AssetVersion(
-        db.AssetVersionKey(asset, department, number),
-        db.AssetVersionState(
-            db.AssetVersionStatus.ACTIVE if active else db.AssetVersionStatus.INACTIVE
-        ),
-    )
-
-
 def test__validate_version_list__valid__one_department():
     """Test validate_version_list works as expected with valid version list from a single department."""
     asset = db.Asset("asset_name", db.AssetType.FX)
-    versions = [make_asset_version(asset, number=it) for it in range(1, 6)]
+    versions = [db.make_asset_version(asset, "dept", it) for it in range(1, 6)]
     assert validation.validate_version_list(versions) == {}
 
 
 def test__validate_version_list__valid__multiple_departments():
     """Test validate_version_list works as expected with valid version list."""
     asset = db.Asset("asset_name", db.AssetType.FX)
-    versions = [make_asset_version(asset, department=str(it)) for it in range(1, 6)]
+    versions = [db.make_asset_version(asset, str(it)) for it in range(1, 6)]
     assert validation.validate_version_list(versions) == {}
 
 
@@ -36,35 +23,35 @@ def test__validate_version_list__fails_with_version_0():
     """Test validate_version_list works as expected with version 0."""
     asset = db.Asset("asset_name", db.AssetType.FX)
     with pytest.raises(ValueError):
-        make_asset_version(asset, number=0)
+        db.make_asset_version(asset, "dept", 0)
 
 
 def test__validate_version_list__does_not_start_at_1():
     """Test validate_version_list works as expected with versions that start above 1."""
     asset = db.Asset("asset_name", db.AssetType.FX)
-    versions = [make_asset_version(asset, number=it) for it in range(2, 6)]
+    versions = [db.make_asset_version(asset, "dept", it) for it in range(2, 6)]
     assert validation.validate_version_list(versions) == {
-        "department": ["Versions do not start at 1: 2"]
+        "dept": ["Versions do not start at 1: 2"]
     }
 
 
 def test__validate_version_list__gaps():
     """Test validate_version_list works as expected with versions that have gaps."""
     asset = db.Asset("asset_name", db.AssetType.FX)
-    versions = [make_asset_version(asset, number=it) for it in range(1, 6)]
+    versions = [db.make_asset_version(asset, "dept", it) for it in range(1, 6)]
     del versions[2]
     assert validation.validate_version_list(versions) == {
-        "department": ["Has version gaps: [1, 2, 4, 5]"]
+        "dept": ["Has version gaps: [1, 2, 4, 5]"]
     }
 
 
 def test__validate_version_list__duplicate():
     """Test validate_version_list works as expected with versions that have duplicates."""
     asset = db.Asset("asset_name", db.AssetType.FX)
-    versions = [make_asset_version(asset, number=it) for it in range(1, 6)]
-    versions.append(make_asset_version(asset, number=2))
+    versions = [db.make_asset_version(asset, "dept", it) for it in range(1, 6)]
+    versions.append(db.make_asset_version(asset, "dept", 2))
     assert validation.validate_version_list(versions) == {
-        "department": ["Has duplicate versions: [1, 2, 3, 4, 5, 2]"]
+        "dept": ["Has duplicate versions: [1, 2, 3, 4, 5, 2]"]
     }
 
 
@@ -75,7 +62,7 @@ def test__validate_asset_version__valid_with_extra_fields(valid_data, caplog):
     asset = db.Asset("hero", db.AssetType.CHARACTER)
     assert validation.validate_asset_version(raw_data) == (
         asset,
-        make_asset_version(asset, department="modeling", number=1, active=False),
+        db.make_asset_version(asset, "modeling", 1, False),
     )
     assert "Ignoring unknown key: extra" in caplog.text
 
@@ -145,17 +132,15 @@ def test__find_good_versions__valid(valid_data, caplog):
     expected_prop = db.Asset("spoon", db.AssetType.PROP)
     assert validation.find_good_versions(valid_data) == {
         expected_character: [
-            make_asset_version(
-                expected_character, department="modeling", number=1, active=False
-            ),
-            make_asset_version(expected_character, department="modeling", number=2),
-            make_asset_version(expected_character, department="texturing", number=1),
+            db.make_asset_version(expected_character, "modeling", 1, False),
+            db.make_asset_version(expected_character, "modeling", 2),
+            db.make_asset_version(expected_character, "texturing", 1),
         ],
         expected_fx: [
-            make_asset_version(expected_fx, department="texturing", number=1),
+            db.make_asset_version(expected_fx, "texturing", 1),
         ],
         expected_prop: [
-            make_asset_version(expected_prop, department="modeling", number=1),
+            db.make_asset_version(expected_prop, "modeling", 1),
         ],
     }
     assert caplog.text == ""
@@ -168,14 +153,12 @@ def test__find_good_versions__validate_issue(valid_data, caplog):
     expected_prop = db.Asset("spoon", db.AssetType.PROP)
     assert validation.find_good_versions(valid_data) == {
         expected_character: [
-            make_asset_version(
-                expected_character, department="modeling", number=1, active=False
-            ),
-            make_asset_version(expected_character, department="modeling", number=2),
-            make_asset_version(expected_character, department="texturing", number=1),
+            db.make_asset_version(expected_character, "modeling", 1, False),
+            db.make_asset_version(expected_character, "modeling", 2),
+            db.make_asset_version(expected_character, "texturing", 1),
         ],
         expected_prop: [
-            make_asset_version(expected_prop, department="modeling", number=1),
+            db.make_asset_version(expected_prop, "modeling", 1),
         ],
     }
     assert "1 validation error for Asset" in caplog.text
@@ -188,12 +171,8 @@ def test__find_good_versions__version_issue(valid_data, caplog):
     expected_fx = db.Asset("hero", db.AssetType.FX)
     expected_prop = db.Asset("spoon", db.AssetType.PROP)
     assert validation.find_good_versions(valid_data) == {
-        expected_fx: [
-            make_asset_version(expected_fx, department="texturing", number=1),
-        ],
-        expected_prop: [
-            make_asset_version(expected_prop, department="modeling", number=1),
-        ],
+        expected_fx: [db.make_asset_version(expected_fx, "texturing", 1)],
+        expected_prop: [db.make_asset_version(expected_prop, "modeling", 1)],
     }
     assert (
         "Asset(name='hero', asset_type=<AssetType.CHARACTER: 'character'>)"

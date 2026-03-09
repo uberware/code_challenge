@@ -113,10 +113,7 @@ def add_asset_version(
     try:
         if status is None:
             status = db.AssetVersionStatus.ACTIVE
-        asset_version = db.AssetVersion(
-            db.AssetVersionKey(asset, department, version),
-            db.AssetVersionState(db.AssetVersionStatus(status)),
-        )
+        asset_version = db.make_asset_version(asset, department, version, status)
     except (ValueError, TypeError, ValidationError) as e:
         logger.error(f"Invalid AssetVersion: {version} {department} {status}\n{e}")
         return None
@@ -247,3 +244,33 @@ def list_asset_versions(
     yield from registry.get_versions(
         db.Asset(asset_name, asset_type), department, version, status
     )
+
+
+def get_latest_version(
+    asset_name: str,
+    asset_type: str | db.AssetType,
+    department: str | None = None,
+    active_only: bool = True,
+    *,
+    registry: db.AssetRegistry | None = None,
+) -> db.AssetVersion | None:
+    """Get the latest version of an asset from a department.
+
+    Args:
+        asset_name: The name of the asset to get.
+        asset_type: The type of the asset to get.
+        department: The department of the version to get.
+        active_only: If True, only active versions are returned.
+        registry: The asset registry to use. None creates one on demand.
+
+    Returns:
+        The latest version of an asset or None if not found.
+    """
+    try:
+        if not isinstance(asset_type, db.AssetType):
+            asset_type = db.AssetType(asset_type)
+    except (ValueError, TypeError, ValidationError) as e:
+        logger.error(f"Invalid Asset type: {asset_type}\n{e}")
+        return None
+    registry = registry or db.AssetRegistry()
+    return registry.latest(db.Asset(asset_name, asset_type), department, active_only)

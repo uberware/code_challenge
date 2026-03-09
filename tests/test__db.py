@@ -166,20 +166,11 @@ def test__get_versions__found(tmp_db, valid_json_file):
     api.load_from_json(valid_json_file, registry=registry)
     result = list(registry.get_versions(db.Asset("hero", db.AssetType.CHARACTER)))
     assert result == [
-        db.AssetVersion(
-            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1),
-            db.AssetVersionState(db.AssetVersionStatus.INACTIVE),
+        db.make_asset_version(
+            db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1, False
         ),
-        db.AssetVersion(
-            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 2),
-            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
-        ),
-        db.AssetVersion(
-            db.AssetVersionKey(
-                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
-            ),
-            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
-        ),
+        db.make_asset_version(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 2),
+        db.make_asset_version(db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1),
     ]
 
 
@@ -193,12 +184,7 @@ def test__get_versions__found__department(tmp_db, valid_json_file):
         )
     )
     assert result == [
-        db.AssetVersion(
-            db.AssetVersionKey(
-                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
-            ),
-            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
-        ),
+        db.make_asset_version(db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1)
     ]
 
 
@@ -210,16 +196,10 @@ def test__get_versions__found__version(tmp_db, valid_json_file):
         registry.get_versions(db.Asset("hero", db.AssetType.CHARACTER), version=1)
     )
     assert result == [
-        db.AssetVersion(
-            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1),
-            db.AssetVersionState(db.AssetVersionStatus.INACTIVE),
+        db.make_asset_version(
+            db.Asset("hero", db.AssetType.CHARACTER), "modeling", 1, False
         ),
-        db.AssetVersion(
-            db.AssetVersionKey(
-                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
-            ),
-            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
-        ),
+        db.make_asset_version(db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1),
     ]
 
 
@@ -234,14 +214,26 @@ def test__get_versions__found__status(tmp_db, valid_json_file):
         )
     )
     assert result == [
-        db.AssetVersion(
-            db.AssetVersionKey(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 2),
-            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
-        ),
-        db.AssetVersion(
-            db.AssetVersionKey(
-                db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1
-            ),
-            db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
-        ),
+        db.make_asset_version(db.Asset("hero", db.AssetType.CHARACTER), "modeling", 2),
+        db.make_asset_version(db.Asset("hero", db.AssetType.CHARACTER), "texturing", 1),
     ]
+
+
+def test__latest__not_found(tmp_db):
+    """Test the get_latest function on an empty database."""
+    registry = db.AssetRegistry(tmp_db)
+    assert registry.latest(db.Asset("spoon", db.AssetType.PROP), "modeling") is None
+
+
+@pytest.mark.parametrize("active_only, expected", [(True, 2), (False, 3)])
+def test__latest__found(active_only, expected, tmp_db):
+    """Test the get_latest function after adding data."""
+    registry = db.AssetRegistry(tmp_db)
+    asset = db.Asset("spoon", db.AssetType.PROP)
+    api.add_asset_version(asset, "modeling", 1, "inactive", registry=registry)
+    api.add_asset_version(asset, "modeling", 2, "active", registry=registry)
+    api.add_asset_version(asset, "modeling", 3, "inactive", registry=registry)
+    result = registry.latest(asset, "modeling", active_only=active_only)
+    assert result is not None
+    assert isinstance(result, db.AssetVersion)
+    assert result.key.version == expected

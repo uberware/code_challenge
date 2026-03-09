@@ -179,6 +179,25 @@ def versions_list(ctx, asset_name, asset_type, department, status, version):
     sys.exit(exit_code)
 
 
+@versions.command("latest")
+@click.argument("asset_name")
+@click.argument("asset_type")
+@click.argument("department")
+@click.option("--active-only", is_flag=True)
+@click.pass_context
+def versions_latest(ctx, asset_name, asset_type, department, active_only):
+    """Latest version of an asset."""
+    _service = ctx.obj["service"]
+    result = _service.get_latest_version(
+        asset_name, asset_type, department, active_only, registry=ctx.obj["registry"]
+    )
+    if result is None:
+        sys.exit(f"No versions found: {asset_name}/{asset_type} - {department}")
+    click.echo(
+        f"Latest version: {asset_name}/{asset_type} - {department}:{result.key.version}"
+    )
+
+
 def main():
     """Entry point for the CLI."""
     cli(obj={})

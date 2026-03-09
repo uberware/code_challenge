@@ -170,5 +170,31 @@ async def get_versions(
     return {"status": "success", "versions": result}
 
 
+@router.get(
+    "/versions/latest/{name}/{asset_type}/{department}", description="Latest version"
+)
+async def get_latest_version(
+    name: str,
+    asset_type: str,
+    department: str,
+    active_only: bool = True,
+    registry: str | None = None,
+):
+    """Latest version of a specific asset."""
+    reg = db.AssetRegistry(registry)
+    result = api.get_latest_version(
+        name, asset_type, department, active_only, registry=reg
+    )
+    if not result:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No versions found: {name}/{asset_type} - {department} active_only={active_only}",
+        )
+    return {
+        "status": "success",
+        "version": result.key.version,
+    }
+
+
 app = FastAPI()
 app.include_router(router, prefix="/v1")
