@@ -1,4 +1,6 @@
-"""Simple asset management service."""
+"""
+Simple asset management service.
+"""
 
 import logging
 import sys

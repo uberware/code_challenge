@@ -1,4 +1,6 @@
-"""Tests the cli module."""
+"""
+Test the cli module.
+"""
 
 import pytest
 from click.testing import CliRunner

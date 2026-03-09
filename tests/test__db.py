@@ -1,8 +1,21 @@
-"""Test the db module."""
+"""
+Test the db module.
+"""
 
 import pytest
 
 from asset_service import api, db
+
+
+@pytest.mark.parametrize("status", [db.AssetVersionStatus.ACTIVE, "active", True])
+def test__make_asset_version(status):
+    """Test the _make_asset_version function."""
+    asset = db.Asset("hero", db.AssetType.CHARACTER)
+    version = db.make_asset_version(asset, "dept", 1, status)
+    assert version == db.AssetVersion(
+        db.AssetVersionKey(asset, "dept", 1),
+        db.AssetVersionState(db.AssetVersionStatus.ACTIVE),
+    )
 
 
 def test__asset_registry_init(memory_db):

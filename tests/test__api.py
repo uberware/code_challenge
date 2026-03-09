@@ -1,4 +1,6 @@
-"""Tests for api module."""
+"""
+Test the api module.
+"""
 
 from pathlib import Path
 from unittest.mock import MagicMock, call

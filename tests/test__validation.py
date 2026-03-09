@@ -1,4 +1,6 @@
-"""Unit tests for the db module."""
+"""
+test the db module.
+"""
 
 import pytest
 

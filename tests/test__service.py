@@ -1,5 +1,5 @@
 """
-Tests for the service module.
+Test the service module.
 """
 
 import pytest

@@ -77,7 +77,8 @@ def make_asset_version(
     if isinstance(active, bool):
         active = AssetVersionStatus.ACTIVE if active else AssetVersionStatus.INACTIVE
     return AssetVersion(
-        AssetVersionKey(asset, department, number), AssetVersionState(active)
+        AssetVersionKey(asset, department, number),
+        AssetVersionState(AssetVersionStatus(active)),
     )
 
 
