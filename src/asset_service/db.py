@@ -279,7 +279,7 @@ class AssetRegistry:
         Yields:
             Each AssetVersion found.
         """
-        query = """SELECT name, asset_type, department, version, status 
+        query = """SELECT department, version, status 
         FROM asset_versions
         WHERE name = ? AND asset_type = ?"""
         conditions = []
@@ -297,7 +297,7 @@ class AssetRegistry:
             query += " AND " + " AND ".join(conditions)
         cur = self.conn.cursor()
         cur.execute(query, params)
-        for name, asset_type, department, version, status in cur.fetchall():
+        for department, version, status in cur.fetchall():
             yield make_asset_version(asset, department, version, status)
 
     def latest(
