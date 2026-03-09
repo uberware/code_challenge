@@ -144,6 +144,12 @@ def test__get_asset__bad_type(mock_asset_registry, caplog):
 # get_assets
 
 
+def test__get_asset__not_found(tmp_db, caplog):
+    """Test get_asset with empty database."""
+    assert list(api.get_assets(registry=db.AssetRegistry(tmp_db))) == []
+    assert "Invalid Asset type: " not in caplog.text
+
+
 @pytest.mark.parametrize("asset_type", ["character", db.AssetType.CHARACTER])
 def test__get_assets__valid(asset_type, valid_json_file, tmp_db, caplog):
     """Test get_assets with valid data."""
@@ -161,3 +167,35 @@ def test__get_assets__bad_type(mock_asset_registry, caplog):
     assert list(api.get_assets(asset_type="bad type", registry=registry)) == []
     assert "Invalid Asset type: bad type" in caplog.text
     mock_asset_registry.get_asset.assert_not_called()
+
+
+# get_version
+
+
+def test__get_version__not_found(tmp_db, caplog):
+    """Test get_version with empty database (not found)."""
+    registry = db.AssetRegistry(tmp_db)
+    assert api.get_version("hero", "fx", "texturing", 1, registry=registry) is None
+    assert "Invalid Asset type: " not in caplog.text
+
+
+@pytest.mark.parametrize("asset_type", ["fx", db.AssetType.FX])
+def test__get_version__valid(asset_type, valid_json_file, tmp_db, caplog):
+    """Test get_assets with valid data."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    result = api.get_version("hero", asset_type, "texturing", 1, registry=registry)
+    assert result is not None
+    assert result.key.asset == db.Asset("hero", db.AssetType.FX)
+    assert result.key.department == "texturing"
+    assert result.key.version == 1
+    assert "Invalid Asset type: " not in caplog.text
+
+
+def test__get_version__bad_type(mock_asset_registry, caplog):
+    """Test get_version with invalid data."""
+    registry = db.AssetRegistry(mock_asset_registry)
+    assert (
+        api.get_version("hero", "bad type", "texturing", 1, registry=registry) is None
+    )
+    assert "Invalid Asset type: bad type" in caplog.text

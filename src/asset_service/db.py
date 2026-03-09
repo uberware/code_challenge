@@ -59,6 +59,14 @@ class AssetVersionState:
     status: AssetVersionStatus
 
 
+@dataclass
+class AssetVersion:
+    """A combination of one key and one state."""
+
+    key: AssetVersionKey
+    state: AssetVersionState
+
+
 class AssetRegistry:
     def __init__(
         self,
@@ -230,11 +238,42 @@ class AssetRegistry:
         else:
             where = data = None
         if data is not None:
-            cur.execute(f"SELECT name, asset_type FROM assets {where}", data)
+            # This triggers bandit with a Possible SQL injection vector that can be ignored
+            cur.execute(f"SELECT name, asset_type FROM assets {where}", data)  # nosec B608
         else:
             cur.execute("SELECT name, asset_type FROM assets")
         for name, status_type in cur.fetchall():
             yield Asset(name, status_type)
+
+    def get_version(
+        self, asset: Asset, department: str, version: int
+    ) -> AssetVersion | None:
+        """Get a specific version of an asset.
+
+        Args:
+            asset: Asset to find the version for.
+            department: Department name to find the version for.
+            version: Version number to retrieve.
+
+        Returns:
+            AssetVersion object if found, None if not found.
+        """
+        cur = self.conn.cursor()
+        cur.execute(
+            """
+            SELECT * 
+            FROM asset_versions
+            WHERE name = ? AND asset_type = ? AND department = ? AND version = ?
+            """,
+            (asset.name, asset.asset_type, department, version),
+        )
+        row = cur.fetchone()
+        if row:
+            return AssetVersion(
+                AssetVersionKey(asset, department, version),
+                AssetVersionState(AssetVersionStatus(row[4])),
+            )
+        return None
 
     def versions_for(self, asset: Asset, department: str | None = None):
         cur = self.conn.cursor()
@@ -282,11 +321,3 @@ class AssetRegistry:
                 AssetVersionState(AssetVersionStatus(status)),
             )
         return None
-
-
-@dataclass
-class AssetVersion:
-    """A combination of one key and one state."""
-
-    key: AssetVersionKey
-    state: AssetVersionState

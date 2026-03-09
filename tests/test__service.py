@@ -177,7 +177,7 @@ def test__get_asset__valid(tmp_db):
     assert response.status_code == 200
     assert response.json() == {
         "status": "success",
-        "message": "Found Asset: banana/prop",
+        "asset": {"name": "banana", "asset_type": "prop"},
     }
 
 
@@ -205,7 +205,6 @@ def test__list__found(name, asset_type, expected, tmp_db, valid_json_file):
     assert response.status_code == 200
     assert response.json() == {
         "status": "success",
-        "message": "Found Assets",
         "assets": [{"name": it[0], "asset_type": it[1]} for it in expected],
     }
 
@@ -216,4 +215,30 @@ def test__list__not_found(tmp_db):
     assert response.status_code == 404
     assert response.json() == {
         "detail": "No Assets found: name='' asset_type=''",
+    }
+
+
+def test__versions__get__not_found(tmp_db):
+    """Test get_versions when not finding something."""
+    response = client.get(f"/v1/versions/get/hero/fx/texturing/1?registry={tmp_db}")
+    assert response.status_code == 404
+    assert response.json() == {
+        "detail": "Version not found: hero/fx - texturing:1",
+    }
+
+
+def test__versions__get__valid(tmp_db, valid_json_file):
+    """Test get_versions when finding something."""
+    api.load_from_json(valid_json_file, registry=db.AssetRegistry(tmp_db))
+    response = client.get(f"/v1/versions/get/hero/fx/texturing/1?registry={tmp_db}")
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "success",
+        "version": {
+            "name": "hero",
+            "asset_type": "fx",
+            "department": "texturing",
+            "version": 1,
+            "status": "active",
+        },
     }

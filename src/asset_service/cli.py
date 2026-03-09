@@ -132,6 +132,16 @@ def versions_add(ctx, asset_name, asset_type, department, version_num, status):
 def versions_get(ctx, asset_name, asset_type, department, version_num):
     """Get a specific asset version."""
     _service = ctx.obj["service"]
+    result = _service.get_version(
+        asset_name, asset_type, department, version_num, registry=ctx.obj["registry"]
+    )
+    if result is None:
+        sys.exit(
+            f"Version not found: {asset_name}/{asset_type} - {department}:{version_num}"
+        )
+    click.echo(
+        f"Found Version: {asset_name}/{asset_type} - {department}:{version_num} = {result.state.status}"
+    )
 
 
 @versions.command("list")

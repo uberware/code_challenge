@@ -172,10 +172,40 @@ def get_assets(
         Each Asset found that matches the given filters.
     """
     try:
-        if not isinstance(asset_type, db.AssetType):
+        if asset_type is not None and not isinstance(asset_type, db.AssetType):
             asset_type = db.AssetType(asset_type)
     except (ValueError, TypeError, ValidationError) as e:
         logger.error(f"Invalid Asset type: {asset_type}\n{e}")
         yield from ()
     registry = registry or db.AssetRegistry()
     yield from registry.get_assets(asset_name, asset_type)
+
+
+def get_version(
+    asset_name: str,
+    asset_type: str | db.AssetType,
+    department: str,
+    version: int,
+    *,
+    registry: db.AssetRegistry | None = None,
+) -> db.AssetVersion | None:
+    """Get a specific asset version.
+
+    Args:
+        asset_name: The name of the asset to get.
+        asset_type: The type of the asset to get.
+        department: The department of the asset.
+        version: The version of the asset.
+        registry: The asset registry to use. None creates one on demand.
+
+    Returns:
+        The found Asset version object or None if not found.
+    """
+    try:
+        if not isinstance(asset_type, db.AssetType):
+            asset_type = db.AssetType(asset_type)
+    except (ValueError, TypeError, ValidationError) as e:
+        logger.error(f"Invalid Asset type: {asset_type}\n{e}")
+        return None
+    registry = registry or db.AssetRegistry()
+    return registry.get_version(db.Asset(asset_name, asset_type), department, version)

@@ -70,7 +70,7 @@ async def get_asset(name: str, asset_type: str, registry: str | None = None):
         raise HTTPException(
             status_code=404, detail=f"Asset not found: {name}/{asset_type}"
         )
-    return {"status": "success", "message": f"Found Asset: {name}/{asset_type}"}
+    return {"status": "success", "asset": {"name": name, "asset_type": asset_type}}
 
 
 @router.get("/list", description="List Assets that match criteria")
@@ -86,7 +86,7 @@ async def list_assets(
             status_code=404,
             detail=f"No Assets found: name='{name or ''}' asset_type='{asset_type or ''}'",
         )
-    return {"status": "success", "message": "Found Assets", "assets": result}
+    return {"status": "success", "assets": result}
 
 
 @router.post("/versions/add", description="Add a single version")
@@ -101,6 +101,37 @@ async def add_version(req: VersionReq):
     ):
         raise HTTPException(status_code=422, detail=f"Version failed validation: {req}")
     return {"status": "success", "message": f"Added version: {req}"}
+
+
+@router.get(
+    "/versions/get/{name}/{asset_type}/{department}/{version}",
+    description="Get a specific version",
+)
+async def get_version(
+    name: str,
+    asset_type: str,
+    department: str,
+    version: int,
+    registry: str | None = None,
+):
+    """Get a specific version."""
+    reg = db.AssetRegistry(registry)
+    result = api.get_version(name, asset_type, department, version, registry=reg)
+    if not result:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Version not found: {name}/{asset_type} - {department}:{version}",
+        )
+    return {
+        "status": "success",
+        "version": {
+            "name": name,
+            "asset_type": asset_type,
+            "department": department,
+            "version": version,
+            "status": result.state.status,
+        },
+    }
 
 
 app = FastAPI()

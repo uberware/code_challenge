@@ -133,3 +133,22 @@ def test__get_assets__no_filter(name, asset_type, expected, tmp_db, valid_json_f
     registry = db.AssetRegistry(tmp_db)
     api.load_from_json(valid_json_file, registry=registry)
     assert list(registry.get_assets(name=name, asset_type=asset_type)) == expected
+
+
+def test__get_version__not_found(tmp_db):
+    """Test the get_version function on an empty database."""
+    registry = db.AssetRegistry(tmp_db)
+    assert (
+        registry.get_version(db.Asset("hero", db.AssetType.FX), "texturing", 1) is None
+    )
+
+
+def test__get_version__found(tmp_db, valid_json_file):
+    """Test the get_version function after adding the asset."""
+    registry = db.AssetRegistry(tmp_db)
+    api.load_from_json(valid_json_file, registry=registry)
+    result = registry.get_version(db.Asset("hero", db.AssetType.FX), "texturing", 1)
+    assert isinstance(result, db.AssetVersion)
+    assert result.key.asset == db.Asset("hero", db.AssetType.FX)
+    assert result.key.department == "texturing"
+    assert result.key.version == 1

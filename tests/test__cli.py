@@ -181,3 +181,28 @@ def test__list(name, asset_type, expected, tmp_db, valid_json_file):
     assert result.exit_code == 0 if expected else 1
     for names in expected:
         assert f"Found Asset: {names[0]}/{names[1]}" in result.output
+
+
+# versions get
+
+
+def test__versions__get__missing(tmp_db):
+    """Test get_versions with an empty database (missing value)."""
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli, ["--registry", tmp_db, "versions", "get", "name", "fx", "dept", "1"]
+    )
+    assert result.exit_code == 1
+    assert "Version not found: name/fx - dept:1" in result.output
+
+
+def test__versions__get_valid(tmp_db, valid_json_file):
+    """Test get_versions with valid data."""
+    api.load_from_json(valid_json_file, registry=db.AssetRegistry(tmp_db))
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli,
+        ["--registry", tmp_db, "versions", "get", "hero", "fx", "texturing", "1"],
+    )
+    assert result.exit_code == 0
+    assert "Found Version: hero/fx - texturing:1 = active" in result.output
